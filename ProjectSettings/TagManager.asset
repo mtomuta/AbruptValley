@@ -41,3 +41,66 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: Grass
+    uniqueID: 3017333799
+    locked: 0
+  - name: Door
+    uniqueID: 2241156991
+    locked: 0
+  - name: Walls
+    uniqueID: 646855039
+    locked: 0
+  - name: Stairs
+    uniqueID: 11726117
+    locked: 0
+  - name: Elements
+    uniqueID: 867504565
+    locked: 0
+  - name: Plants_bottom
+    uniqueID: 1744221233
+    locked: 0
+  - name: Altar
+    uniqueID: 3898724687
+    locked: 0
+  - name: Props
+    uniqueID: 1756271305
+    locked: 0
+  - name: Props_bottom
+    uniqueID: 503349519
+    locked: 0
+  - name: Buildings_bottom
+    uniqueID: 1472656045
+    locked: 0
+  - name: Statue2
+    uniqueID: 2884231455
+    locked: 0
+  - name: Plants_above_grass
+    uniqueID: 471946021
+    locked: 0
+  - name: Player
+    uniqueID: 3724797731
+    locked: 0
+  - name: Statue
+    uniqueID: 2683478875
+    locked: 0
+  - name: Plants_top
+    uniqueID: 3405184239
+    locked: 0
+  - name: Buildings_top
+    uniqueID: 2864891635
+    locked: 0
+  - name: Tree_behind_prop
+    uniqueID: 2568420995
+    locked: 0
+  - name: Prop_specific
+    uniqueID: 1755010719
+    locked: 0
+  - name: Props_top
+    uniqueID: 3925405921
+    locked: 0
+  - name: Grass_bridge
+    uniqueID: 1538746395
+    locked: 0
+  - name: Bridge
+    uniqueID: 140755795
+    locked: 0

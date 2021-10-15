@@ -4,12 +4,12 @@ using UnityEngine;
 
 public class InputPlayer : MonoBehaviour
 {
-    [HideInInspector] public float horizontalAxis;
-    [HideInInspector] public float verticalAxis;
-    [HideInInspector] public bool attack;
-    [HideInInspector] public bool ability;
-    [HideInInspector] public bool interact;
-    [HideInInspector] public bool inventory;
+    [HideInInspector] public float horizontalAxis { get; private set; }
+    [HideInInspector] public float verticalAxis { get; private set; }
+    [HideInInspector] public bool attack { get; private set; }
+    [HideInInspector] public bool ability { get; private set; }
+    [HideInInspector] public bool interact { get; private set; }
+    [HideInInspector] public bool inventory { get; private set; }
 
     // Update is called once per frame
     void Update()
