@@ -11,7 +11,7 @@ TagManager:
   - 
   - Water
   - UI
-  - 
+  - Interactable
   - 
   - 
   - 
@@ -44,11 +44,20 @@ TagManager:
   - name: Grass
     uniqueID: 3017333799
     locked: 0
+  - name: Black_holes
+    uniqueID: 3967132337
+    locked: 0
+  - name: Spike
+    uniqueID: 4226493465
+    locked: 0
   - name: Door
     uniqueID: 2241156991
     locked: 0
   - name: Walls
     uniqueID: 646855039
+    locked: 0
+  - name: Walls_bottom
+    uniqueID: 4046007271
     locked: 0
   - name: Stairs
     uniqueID: 11726117
@@ -59,11 +68,11 @@ TagManager:
   - name: Plants_bottom
     uniqueID: 1744221233
     locked: 0
+  - name: Bottom
+    uniqueID: 3885034859
+    locked: 0
   - name: Altar
     uniqueID: 3898724687
-    locked: 0
-  - name: Props
-    uniqueID: 1756271305
     locked: 0
   - name: Props_bottom
     uniqueID: 503349519
@@ -71,14 +80,35 @@ TagManager:
   - name: Buildings_bottom
     uniqueID: 1472656045
     locked: 0
+  - name: Bridge_bottom
+    uniqueID: 2932033935
+    locked: 0
+  - name: Props
+    uniqueID: 1756271305
+    locked: 0
   - name: Statue2
     uniqueID: 2884231455
     locked: 0
   - name: Plants_above_grass
     uniqueID: 471946021
     locked: 0
+  - name: Bomber
+    uniqueID: 1565158817
+    locked: 0
+  - name: Slime
+    uniqueID: 1345722291
+    locked: 0
+  - name: Water_container
+    uniqueID: 343445899
+    locked: 0
   - name: Player
     uniqueID: 3724797731
+    locked: 0
+  - name: Bat
+    uniqueID: 964911585
+    locked: 0
+  - name: Merchant
+    uniqueID: 2316089505
     locked: 0
   - name: Statue
     uniqueID: 2683478875
@@ -86,21 +116,30 @@ TagManager:
   - name: Plants_top
     uniqueID: 3405184239
     locked: 0
+  - name: Walls_top
+    uniqueID: 2263921089
+    locked: 0
   - name: Buildings_top
     uniqueID: 2864891635
     locked: 0
   - name: Tree_behind_prop
     uniqueID: 2568420995
     locked: 0
-  - name: Prop_specific
-    uniqueID: 1755010719
-    locked: 0
   - name: Props_top
     uniqueID: 3925405921
+    locked: 0
+  - name: Prop_specific
+    uniqueID: 1755010719
     locked: 0
   - name: Grass_bridge
     uniqueID: 1538746395
     locked: 0
-  - name: Bridge
+  - name: Bridge_top
     uniqueID: 140755795
+    locked: 0
+  - name: Symbols
+    uniqueID: 1840383607
+    locked: 0
+  - name: Top
+    uniqueID: 2935829383
     locked: 0
