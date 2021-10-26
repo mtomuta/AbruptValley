@@ -16,7 +16,7 @@ public class Interactable : MonoBehaviour, IPointerDownHandler
         jugador = GameManager.instance.player.GetComponent<PlayerController>();
     }
 
-    private void FixedUpdate()
+    private void Update()
     {
         if (Input.GetKeyDown(KeyCode.E))
         {

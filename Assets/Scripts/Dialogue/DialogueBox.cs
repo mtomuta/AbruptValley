@@ -18,6 +18,14 @@ public class DialogueBox : MonoBehaviour
         instance = this;
     }
 
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.F))
+        {
+            nextLine();
+        }
+    }
+
     public void startDialogue(Dialogue dialogue)
     {
         onStartDialogue?.Invoke();
