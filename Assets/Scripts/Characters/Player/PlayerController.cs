@@ -5,9 +5,10 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
-    [SerializeField] public float speed = 3;
+    public float speed = 3;
     private float horizontal;
     private float vertical;
+   
     private Animator animator;
     private InputPlayer inputPlayer;
     private Rigidbody2D myRigidbody2D;
@@ -15,8 +16,11 @@ public class PlayerController : MonoBehaviour
     private Attacker attacker;
     private Attributes playerAttributes;
     public LayerMask layerInteraction;
+
     int runningHashCode;
     int attackingHashCode;
+
+    private static bool playerExists;
 
     void Start()
     {
@@ -28,6 +32,16 @@ public class PlayerController : MonoBehaviour
         attacker = GetComponent<Attacker>();
         runningHashCode = Animator.StringToHash("Running");
         attackingHashCode = Animator.StringToHash("Attacking");
+
+        if (!playerExists)
+        {
+            playerExists = true;
+            DontDestroyOnLoad(transform.gameObject);
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
     }
 
     void Update()

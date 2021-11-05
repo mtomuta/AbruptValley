@@ -13,7 +13,8 @@ public class Interactable : MonoBehaviour, IPointerDownHandler
     private void Start()
     {
         myCollider = GetComponent<BoxCollider2D>();
-        jugador = GameManager.instance.player.GetComponent<PlayerController>();
+        jugador = FindObjectOfType<PlayerController>();
+        //jugador = GameManager.instance.player.GetComponent<PlayerController>();
     }
 
     private void Update()

@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
-    public Transform playerSpawnPoint;
-    public GameObject player;
     public static GameManager instance { get; private set; }
+    public Transform playerSpawnPoint;
+    public PlayerController player;
 
     private void Awake()
     {
@@ -18,7 +18,14 @@ public class GameManager : MonoBehaviour
 
     void Start()
     {
-        player = GameObject.FindGameObjectWithTag("Player");
+        playerSpawnPoint = FindObjectOfType<SpawnPoint>().transform;
+        player = FindObjectOfType<PlayerController>();
         player.transform.position = playerSpawnPoint.position;
+    }
+
+    void Update()
+    {
+        //playerSpawnPoint = FindObjectOfType<RespawnPoint>().transform;
+        //playerSpawnPoint.position = new Vector2(-11, 28);
     }
 }
