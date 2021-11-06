@@ -21,7 +21,7 @@ public class TeleportToLvl1 : MonoBehaviour
     private IEnumerator WaitForSceneLoad()
     {
         yield return new WaitForSeconds(1);
-        SceneManager.LoadScene(1);
+        SceneManager.LoadScene("Valley");
 
         // GameManager.Player.transform.position = GameManager.playerSpawnPoint.position;
         //Player.transform.position = new Vector2(-11,28);

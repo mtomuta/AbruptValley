@@ -19,6 +19,6 @@ public class TeleportToLvl2 : MonoBehaviour
     private IEnumerator WaitForSceneLoad()
     {
         yield return new WaitForSeconds(1);
-        SceneManager.LoadScene(2);
+        SceneManager.LoadScene("Dungeon");
     }
 }
