@@ -27,7 +27,7 @@ public class Interactable : MonoBehaviour, IPointerDownHandler
 
     //private void OnTriggerEnter2D(Collider2D collision)
     //{
-    //    onInteraction?.Invoke();
+        //onInteraction?.Invoke();
     //}
 
     public void OnPointerDown(PointerEventData eventData)

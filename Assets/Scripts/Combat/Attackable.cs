@@ -4,15 +4,15 @@ using UnityEngine;
 
 public class Attackable : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    private Health myHealth;
+
+    private void Start()
     {
-        
+        myHealth = GetComponent<Health>();
     }
 
-    // Update is called once per frame
-    void Update()
+    public void ReceiveAttack()
     {
-        
+        myHealth.ActualHealth -= 1;
     }
 }

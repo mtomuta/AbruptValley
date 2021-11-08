@@ -15,7 +15,7 @@ public class InputPlayer : MonoBehaviour
     public Vector2 faceDirection = new Vector2(0, -1f);
 
     // Update is called once per frame
-    void FixedUpdate()
+    void Update()
     {
         attack = Input.GetButtonDown("Attack");
         ability = Input.GetButtonDown("Ability");
@@ -27,7 +27,7 @@ public class InputPlayer : MonoBehaviour
         verticalAxis = Input.GetAxis("Vertical");
 
         determinateFaceDirection();
-        Debug.DrawLine(transform.position, transform.position + (Vector3)faceDirection.normalized * 3, Color.green);
+        //Debug.DrawLine(transform.position, transform.position + (Vector3)faceDirection.normalized * 3, Color.green);
     }
 
     private void determinateFaceDirection()

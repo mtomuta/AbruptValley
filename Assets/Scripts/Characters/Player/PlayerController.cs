@@ -15,7 +15,7 @@ public class PlayerController : MonoBehaviour
     private Transform transformed;
     private Attacker attacker;
     private Attributes playerAttributes;
-    public LayerMask layerInteraction;
+    public LayerMask interactionLayer;
 
     int runningHashCode;
     int attackingHashCode;
@@ -58,11 +58,10 @@ public class PlayerController : MonoBehaviour
         {
             animator.SetBool(runningHashCode, false);
         }
-    }
-    void FixedUpdate(){
-
+        
         if (Input.GetButtonDown("Attack"))
         {
+            attacker.Attack(new Vector2(horizontal, vertical), playerAttributes.attack);
             animator.SetBool("Attacking", true);
         }
 
@@ -97,7 +96,7 @@ public class PlayerController : MonoBehaviour
 
     public RaycastHit2D[] Interact()
     {
-        RaycastHit2D[] circleCast = Physics2D.CircleCastAll(transform.position, GetComponent<CapsuleCollider2D>().size.x, inputPlayer.faceDirection, 2f, layerInteraction);
+        RaycastHit2D[] circleCast = Physics2D.CircleCastAll(transform.position, GetComponent<CapsuleCollider2D>().size.x, inputPlayer.faceDirection, 0.5f, interactionLayer);
         if (circleCast != null)
         {
             return circleCast;

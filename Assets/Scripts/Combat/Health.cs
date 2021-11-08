@@ -1,18 +1,36 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class Health : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    public int baseHealth;
+    private int actualHealth;
+    public UnityEvent onDeath;
+
+    public int ActualHealth
     {
-        
+        get
+        {
+            return actualHealth;
+        }
+        set
+        {
+            if (value > 0)
+            {
+                actualHealth = value;
+            }
+            else
+            {
+                actualHealth = 0;
+                Destroy(gameObject,0.5f);
+            }
+        }
     }
 
-    // Update is called once per frame
-    void Update()
+    void Start()
     {
-        
+        ActualHealth = baseHealth;
     }
 }

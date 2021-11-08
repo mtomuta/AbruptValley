@@ -5,9 +5,19 @@ using UnityEngine;
 public class Attacker : MonoBehaviour
 {
     public float offSet = 1f;
+
     public Vector2 hitBox = new Vector2(1,1);
     private Vector2 attackVectorOffSet;
-    private Vector2 pointA, pointB; 
+    private Vector2 pointA, pointB;
+
+    public LayerMask attackLayer;
+    private Collider2D[] colliderAttack = new Collider2D[10];
+    private ContactFilter2D attackFilter;
+
+    private void Start()
+    {
+        attackFilter.layerMask = attackLayer;
+    }
 
     private void Update()
     {
@@ -17,8 +27,28 @@ public class Attacker : MonoBehaviour
 
     public void Attack(Vector2 attackDirection, int damage)
     {
-        attackVectorOffSet = attackDirection.normalized * offSet;
-        pointA = (Vector2)transform.position + attackVectorOffSet - hitBox * 0.5f;
-        pointB = pointA + hitBox;
+        //Debug.Log("Estoy atacando");
+        HitBoxInteraction(attackDirection);
+        GameObject attackedObject;
+        int attackedElements = Physics2D.OverlapArea(pointA, pointB, attackFilter, colliderAttack);
+        Debug.Log("Se esta atacando a " + attackedElements);
+
+        for (int i=0; i < attackedElements; i++)
+        {
+            attackedObject = colliderAttack[i].gameObject;
+            if (attackedObject.GetComponent<Attackable>())
+            {
+                attackedObject.GetComponent<Attackable>().ReceiveAttack();
+            }
+        }
+    }
+
+    private void HitBoxInteraction(Vector2 attackDirection)
+    {
+        Vector2 scale = transform.lossyScale;
+        Vector2 scaledHitBox = Vector2.Scale(hitBox, scale);
+        attackVectorOffSet = Vector2.Scale(attackDirection.normalized * offSet, scale);
+        pointA = (Vector2)transform.position + attackVectorOffSet - scaledHitBox * 0.5f;
+        pointB = pointA + scaledHitBox;
     }
 }
