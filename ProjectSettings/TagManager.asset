@@ -12,7 +12,7 @@ TagManager:
   - Water
   - UI
   - Interactable
-  - 
+  - Player
   - 
   - 
   - 
@@ -92,14 +92,11 @@ TagManager:
   - name: Plants_above_grass
     uniqueID: 471946021
     locked: 0
-  - name: Bomber
-    uniqueID: 1565158817
-    locked: 0
-  - name: Slime
-    uniqueID: 1345722291
-    locked: 0
   - name: Water_container
     uniqueID: 343445899
+    locked: 0
+  - name: Enemy
+    uniqueID: 1345722291
     locked: 0
   - name: Player
     uniqueID: 3724797731

@@ -17,6 +17,7 @@ public class Attacker : MonoBehaviour
     private void Start()
     {
         attackFilter.layerMask = attackLayer;
+        attackFilter.useLayerMask = true;
     }
 
     private void Update()
@@ -31,7 +32,7 @@ public class Attacker : MonoBehaviour
         HitBoxInteraction(attackDirection);
         GameObject attackedObject;
         int attackedElements = Physics2D.OverlapArea(pointA, pointB, attackFilter, colliderAttack);
-        Debug.Log("Se esta atacando a " + attackedElements);
+        //Debug.Log("Se esta atacando a " + attackedElements);
 
         for (int i=0; i < attackedElements; i++)
         {

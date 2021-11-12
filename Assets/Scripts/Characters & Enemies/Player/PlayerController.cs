@@ -5,16 +5,15 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
-    public float speed = 3;
     private float horizontal;
     private float vertical;
-   
+    
     private Animator animator;
     private InputPlayer inputPlayer;
     private Rigidbody2D myRigidbody2D;
     private Transform transformed;
     private Attacker attacker;
-    private Attributes playerAttributes;
+    public Attributes playerAttributes;
     public LayerMask interactionLayer;
 
     int runningHashCode;
@@ -28,7 +27,6 @@ public class PlayerController : MonoBehaviour
         transformed = GetComponent<Transform>();
         myRigidbody2D = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
-        playerAttributes = GetComponent<Attributes>();
         attacker = GetComponent<Attacker>();
         runningHashCode = Animator.StringToHash("Running");
         attackingHashCode = Animator.StringToHash("Attacking");
@@ -61,19 +59,8 @@ public class PlayerController : MonoBehaviour
         
         if (Input.GetButtonDown("Attack"))
         {
-            attacker.Attack(new Vector2(horizontal, vertical), playerAttributes.attack);
-            animator.SetBool("Attacking", true);
+            animator.SetBool(attackingHashCode, true);
         }
-
-        if (animator.GetBool("Attacking"))
-        {
-            myRigidbody2D.velocity = Vector2.zero;
-        }
-        else
-        {
-            Vector2 vectorVelocity = new Vector2(horizontal, vertical) * speed;
-            myRigidbody2D.velocity = vectorVelocity;
-        }   
 
         //if (player.isAbove == false)
         //{
@@ -88,10 +75,30 @@ public class PlayerController : MonoBehaviour
         //}
     }
 
+    void FixedUpdate()
+    {
+        if (animator.GetBool(attackingHashCode))
+        {
+            myRigidbody2D.velocity = Vector2.zero;
+            //myRigidbody2D.Sleep();
+        }
+        else
+        {
+            Vector2 vectorSpeed = new Vector2(horizontal, vertical) * playerAttributes.speed;
+            myRigidbody2D.velocity = vectorSpeed;
+        }
+    }
+
     private void SetXYAnimator()
     {
         animator.SetFloat("X", horizontal);
         animator.SetFloat("Y", vertical);
+    }
+
+    void attackController()
+    {
+        attacker.Attack(inputPlayer.faceDirection, playerAttributes.attack);
+        animator.SetBool(attackingHashCode, false);
     }
 
     public RaycastHit2D[] Interact()

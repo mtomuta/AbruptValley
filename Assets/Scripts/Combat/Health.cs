@@ -17,14 +17,21 @@ public class Health : MonoBehaviour
         }
         set
         {
-            if (value > 0)
+            if (value > 0 && value<=baseHealth)
             {
                 actualHealth = value;
+            }
+            else if (value > baseHealth)
+            {
+                actualHealth = baseHealth;
             }
             else
             {
                 actualHealth = 0;
-                Destroy(gameObject,0.5f);
+                if (onDeath != null)
+                {
+                    onDeath.Invoke();
+                }
             }
         }
     }
@@ -32,5 +39,16 @@ public class Health : MonoBehaviour
     void Start()
     {
         ActualHealth = baseHealth;
+    }
+
+    //public void modifyActualHealth(int amount)
+    //{
+    //    ActualHealth += amount;
+    //}
+
+    private void DestroyGameObject()
+    {
+        Destroy(gameObject);
+        //Destroy(gameObject, 0.5f)
     }
 }
