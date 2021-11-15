@@ -6,5 +6,5 @@ using UnityEngine;
 public class Attributes : ScriptableObject
 {
     public int attack;
-    public int speed;
+    public float speed;
 }

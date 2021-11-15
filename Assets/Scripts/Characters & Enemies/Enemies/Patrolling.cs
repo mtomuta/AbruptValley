@@ -4,35 +4,66 @@ using UnityEngine;
 
 public class Patrolling : MonoBehaviour
 {
-
-    public float speed;
-    private float waitTime;
     public float startWaitTime;
+    private float waitTime;
+    private float currentXPosition;
 
-    public Transform[] movePoint;
-    private int randomPoint;
+    public float minX;
+    public float maxX;
+    public float minY;
+    public float maxY;
+
+    private Animator animator;
+    public Attributes attributes;
+    private SpriteRenderer spriteRenderer;
+    public Transform moveToPoint;
+
+    private int walkingHashCode;
 
     void Start()
     {
-        waitTime = startWaitTime;
-        randomPoint = Random.Range(0, movePoint.Length);
+        currentXPosition = transform.position.x;
+        animator = GetComponent<Animator>();
+        spriteRenderer = GetComponent<SpriteRenderer>();
+        walkingHashCode = Animator.StringToHash("Walking");
     }
 
-    void FixedUpdate()
+    void Update()
     {
-        transform.position = Vector2.MoveTowards(transform.position, movePoint[randomPoint].position, speed * Time.deltaTime);
+        Patrol();
+        FlipSprite();
 
-        if (Vector2.Distance(transform.position, movePoint[randomPoint].position) < 0.2f)
+        if (Vector2.Distance(transform.position, moveToPoint.position) < 0.2f)
         {
             if (waitTime <= 0)
             {
-                randomPoint = Random.Range(0, movePoint.Length);
                 waitTime = startWaitTime;
+                moveToPoint.position = new Vector2(Random.Range(minX, maxX), Random.Range(minY, maxY));
             }
             else
             {
                 waitTime -= Time.deltaTime;
             }
+        }
+    }
+
+    public virtual void Patrol()
+    {
+        animator.SetBool(walkingHashCode, true);
+        transform.position = Vector2.MoveTowards(transform.position, moveToPoint.position, attributes.speed * Time.deltaTime);
+    }
+
+    void FlipSprite()
+    {
+        if (transform.position.x > currentXPosition)
+        {
+            currentXPosition = transform.position.x;
+            spriteRenderer.flipX = false;
+        }
+        else if (transform.position.x < currentXPosition)
+        {
+            currentXPosition = transform.position.x;
+            spriteRenderer.flipX = true;
         }
     }
 }

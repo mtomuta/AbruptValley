@@ -15,6 +15,7 @@ public class EnemyAI : MonoBehaviour
     private int walkingHashCode;
     private int deathHashCode;
 
+    protected Patrolling patrolling;
     protected InputEnemy input;
     private Attacker attacker;
     protected SpriteRenderer spriteRenderer;
@@ -31,6 +32,7 @@ public class EnemyAI : MonoBehaviour
         animator = GetComponent<Animator>();
         attacker = GetComponent<Attacker>();
         input = GetComponent<InputEnemy>();
+        patrolling = GetComponent<Patrolling>();
         spriteRenderer = GetComponent<SpriteRenderer>();
         attackHashCode = Animator.StringToHash("Attack");
         deathHashCode = Animator.StringToHash("Death");
@@ -55,20 +57,36 @@ public class EnemyAI : MonoBehaviour
             {
                 MoveToPlayer();
             }
-            //else if (input.playerDistance > aggroDistance)
-            //{
-            //    myRigidbody2D.velocity = Vector2.zero;
-            //    myRigidbody2D.Sleep();
-            //    Debug.Log("No estoy a distancia");
-            //}
+            else if (input.playerDistance > aggroDistance)
+            {
+                AggroOff();
+                patrolling.Patrol();
+                //myRigidbody2D.velocity = Vector2.zero;
+                //myRigidbody2D.Sleep();
+                //Debug.Log("No estoy a distancia");
+                //}
+            }
         }
     }
+
+    //private void OnTriggerExit2D(Collider2D other)
+    //{
+        //SetAttackFalse();
+        //patrolling.Patrol();
+        //Debug.Log("No estoy a distancia");
+    //}
 
     private void MoveToPlayer()
     {
         animator.SetBool(walkingHashCode, true);
         FlipSprite();
         transform.position += (Vector3)input.directionTowardsPlayer * attributes.speed * Time.deltaTime;
+    }
+
+    private void AggroOff()
+    {
+        attacking = false;
+        inCombat = false;
     }
 
     private void DoAttack()
