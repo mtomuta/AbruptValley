@@ -1126,7 +1126,7 @@ GameObject:
   - component: {fileID: 569778832}
   m_Layer: 5
   m_Name: OptionsMenu
-  m_TagString: Untagged
+  m_TagString: OptionsMenu
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1705,7 +1705,7 @@ GameObject:
   - component: {fileID: 1164874412}
   m_Layer: 5
   m_Name: Slider
-  m_TagString: Untagged
+  m_TagString: Slider
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1785,13 +1785,13 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1661175664}
         m_TargetAssemblyTypeName: VolumeController, Assembly-CSharp
-        m_MethodName: updateVolume
+        m_MethodName: UpdateVolume
         m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
-          m_FloatArgument: 0
+          m_FloatArgument: 1
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
@@ -2326,7 +2326,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1661175665}
   - component: {fileID: 1661175664}
-  - component: {fileID: 1661175666}
   m_Layer: 0
   m_Name: VolumeController
   m_TagString: Untagged
@@ -2346,7 +2345,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7f5f3a5d2e7d55640b9f046fbd5eaec5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  AudioSource: {fileID: 1774987865}
+  AudioSource: {fileID: 0}
+  volumeSlider: {fileID: 1164874412}
 --- !u!4 &1661175665
 Transform:
   m_ObjectHideFlags: 0
@@ -2359,20 +2359,8 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1661175666
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1661175663}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 99f505c59dbebdb4c9d85eff86d7e59e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1728463784
 GameObject:
   m_ObjectHideFlags: 0
@@ -2460,8 +2448,8 @@ GameObject:
   - component: {fileID: 1774987865}
   - component: {fileID: 1774987867}
   m_Layer: 0
-  m_Name: BackgroundMusic
-  m_TagString: Untagged
+  m_Name: Audio Source
+  m_TagString: GameMusic
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2574,7 +2562,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1774987867
 MonoBehaviour:
@@ -2583,7 +2571,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1774987864}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 99f505c59dbebdb4c9d85eff86d7e59e, type: 3}
   m_Name: 
@@ -2664,7 +2652,7 @@ Canvas:
   m_OverrideSorting: 0
   m_OverridePixelPerfect: 0
   m_SortingBucketNormalizedSize: 0
-  m_AdditionalShaderChannelsFlag: 0
+  m_AdditionalShaderChannelsFlag: 25
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_TargetDisplay: 0

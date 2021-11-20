@@ -1,36 +1,41 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class VolumeController : MonoBehaviour
 {
-    public AudioSource AudioSource;
     private float musicVolume = 1f;
 
-    private static bool volumeControllerExists;
+    public AudioSource AudioSource;
+    public Slider volumeSlider;
 
-    void Start()
-    {   
-        AudioSource.Play();
+    private void Start()
+    {
+        AudioSource = GameObject.FindWithTag("GameMusic").GetComponent<AudioSource>();
 
-        if (!volumeControllerExists)
-        {
-            volumeControllerExists = true;
-            DontDestroyOnLoad(transform.gameObject);
-        }
-        else
-        {
-            Destroy(gameObject);
-        }
+        musicVolume = PlayerPrefs.GetFloat("volume");
+        AudioSource.volume = musicVolume;
+        volumeSlider.value = musicVolume;
     }
 
-    void Update()
+    private void Update()
     {
         AudioSource.volume = musicVolume;
+        PlayerPrefs.SetFloat("volume", musicVolume);
     }
 
-    public void updateVolume(float volume)
+    public void UpdateVolume(float volume)
     {
         musicVolume = volume;
     }
+
+    public void ResetMusic()
+    {
+        PlayerPrefs.DeleteKey("volume");
+        AudioSource.volume = 1;
+        volumeSlider.value = 1;
+    }
+
+
 }

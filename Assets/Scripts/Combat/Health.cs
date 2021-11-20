@@ -1,12 +1,15 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using UnityEngine.Events;
 
 public class Health : MonoBehaviour
 {
     public int baseHealth;
-    private int actualHealth;
+    public int actualHealth;
+
+    public Transform currentHealthBar;
     public UnityEvent onDeath;
 
     public int ActualHealth
@@ -41,10 +44,27 @@ public class Health : MonoBehaviour
         ActualHealth = baseHealth;
     }
 
-    //public void modifyActualHealth(int amount)
-    //{
-    //    ActualHealth += amount;
-    //}
+    public void UpdateActualHealth(int damage)
+    {
+        ActualHealth -= damage;
+        UpdateHealthBar();
+    }
+
+    private void UpdateHealthBar()
+    {
+        if (currentHealthBar)
+        {
+            Vector3 scale = new Vector3((float)ActualHealth / baseHealth, 1, 1);
+            currentHealthBar.localScale = scale;
+            //currentHealthBar.fillAmount = (float)ActualHealth / baseHealth;
+        }
+    }
+
+    public void RespawnBaseHealth()
+    {
+        ActualHealth = baseHealth;
+        UpdateHealthBar();
+    }
 
     private void DestroyGameObject()
     {

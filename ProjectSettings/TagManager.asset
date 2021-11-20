@@ -3,7 +3,12 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - GameMusic
+  - Slider
+  - OptionsMenu
+  - Timer
+  - SpawnPoint
   layers:
   - Default
   - TransparentFX
@@ -14,9 +19,9 @@ TagManager:
   - Interactable
   - Player
   - 
-  - 
-  - 
-  - 
+  - Layer 1
+  - Layer 2
+  - Layer 3
   - 
   - 
   - 
@@ -77,7 +82,7 @@ TagManager:
   - name: Props_bottom
     uniqueID: 503349519
     locked: 0
-  - name: Buildings_bottom
+  - name: House_bottom
     uniqueID: 1472656045
     locked: 0
   - name: Bridge_bottom
@@ -116,7 +121,7 @@ TagManager:
   - name: Walls_top
     uniqueID: 2263921089
     locked: 0
-  - name: Buildings_top
+  - name: House_top
     uniqueID: 2864891635
     locked: 0
   - name: Tree_behind_prop
@@ -139,4 +144,16 @@ TagManager:
     locked: 0
   - name: Top
     uniqueID: 2935829383
+    locked: 0
+  - name: Runes
+    uniqueID: 590328313
+    locked: 0
+  - name: Layer 1
+    uniqueID: 3396486787
+    locked: 0
+  - name: Layer 2
+    uniqueID: 281045675
+    locked: 0
+  - name: Layer 3
+    uniqueID: 4178938237
     locked: 0

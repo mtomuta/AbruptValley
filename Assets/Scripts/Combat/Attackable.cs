@@ -5,22 +5,22 @@ using UnityEngine;
 public class Attackable : MonoBehaviour
 {
     private Health myHealth;
-    //private Rigidbody2D myRigidbody;
+    private Rigidbody2D myRigidbody;
 
     private void Start()
     {
         myHealth = GetComponent<Health>();
-        //myRigidbody = GetComponent<Rigidbody2D>();
+        myRigidbody = GetComponent<Rigidbody2D>();
     }
 
-    public void ReceiveAttack()
-    {
-        myHealth.ActualHealth -= 1;
-    }
-
-    //public void ReceiveAttack(int damage, Vector2 attackDirection)
+    //public void ReceiveAttack()
     //{
-    //myHealth.modifyActualHealth(damage);
-    //myRigidbody.AddForce(attackDirection);
+    //    myHealth.ActualHealth -= 1;
     //}
+
+    public void ReceiveAttack(Vector2 attackDirection, int damage)
+    {
+        myHealth.UpdateActualHealth(damage);
+        myRigidbody.AddForce(attackDirection*damage);
+    }
 }

@@ -14,7 +14,6 @@ public class InputPlayer : MonoBehaviour
     [HideInInspector]
     public Vector2 faceDirection = new Vector2(0, -1f);
 
-    // Update is called once per frame
     void Update()
     {
         attack = Input.GetButtonDown("Attack");
@@ -22,7 +21,6 @@ public class InputPlayer : MonoBehaviour
         interact = Input.GetButtonDown("Interact");
         inventory = Input.GetButtonDown("Inventory");
 
-        // Defining movements axis
         horizontalAxis = Input.GetAxis("Horizontal");
         verticalAxis = Input.GetAxis("Vertical");
 

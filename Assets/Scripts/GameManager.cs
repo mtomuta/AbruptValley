@@ -8,6 +8,8 @@ public class GameManager : MonoBehaviour
     public Transform playerSpawnPoint;
     public PlayerController player;
 
+    private static bool gameManager;
+
     private void Awake()
     {
         if (instance == null)
@@ -21,6 +23,16 @@ public class GameManager : MonoBehaviour
         playerSpawnPoint = FindObjectOfType<SpawnPoint>().transform;
         player = FindObjectOfType<PlayerController>();
         player.transform.position = playerSpawnPoint.position;
+
+        if (!gameManager)
+        {
+            gameManager = true;
+            DontDestroyOnLoad(transform.gameObject);
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
     }
 
     void Update()

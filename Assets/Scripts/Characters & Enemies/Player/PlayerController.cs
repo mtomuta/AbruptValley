@@ -16,9 +16,11 @@ public class PlayerController : MonoBehaviour
     public Attributes playerAttributes;
     public LayerMask interactionLayer;
 
-    int runningHashCode;
+    int deathHashCode;
     int attackingHashCode;
+    int runningHashCode;
 
+    private bool dead;
     private static bool playerExists;
 
     void Start()
@@ -28,8 +30,9 @@ public class PlayerController : MonoBehaviour
         myRigidbody2D = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
         attacker = GetComponent<Attacker>();
-        runningHashCode = Animator.StringToHash("Running");
+        deathHashCode = Animator.StringToHash("Death");
         attackingHashCode = Animator.StringToHash("Attacking");
+        runningHashCode = Animator.StringToHash("Running");
 
         if (!playerExists)
         {
@@ -61,18 +64,6 @@ public class PlayerController : MonoBehaviour
         {
             animator.SetBool(attackingHashCode, true);
         }
-
-        //if (player.isAbove == false)
-        //{
-        //    AddSortingOrder = bridge.sortingOrder;
-        //    player.sortingOrder = AddSortingOrder + player.sortingOrder;
-        //    player.isAbove = false;
-        //}
-        //else
-        //{
-        //    AddSortingOrder = 0;
-        //    player.isAbove = true;
-        //}
     }
 
     void FixedUpdate()
@@ -95,10 +86,25 @@ public class PlayerController : MonoBehaviour
         animator.SetFloat("Y", vertical);
     }
 
-    void attackController()
+    void AttackController()
     {
         attacker.Attack(inputPlayer.faceDirection, playerAttributes.attack);
         animator.SetBool(attackingHashCode, false);
+    }
+
+    public void Dead()
+    {
+        dead = true;
+        animator.SetBool(deathHashCode, true);
+        //Time.timeScale = 0f;
+    }
+
+    void SetDeadFalse()
+    {
+        dead = false;
+        animator.SetBool(deathHashCode, false);
+        animator.SetBool(runningHashCode, true);
+        Time.timeScale = 0f;
     }
 
     public RaycastHit2D[] Interact()

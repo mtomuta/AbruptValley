@@ -28,18 +28,16 @@ public class Attacker : MonoBehaviour
 
     public void Attack(Vector2 attackDirection, int damage)
     {
-        //Debug.Log("Estoy atacando");
         HitBoxInteraction(attackDirection);
         GameObject attackedObject;
         int attackedElements = Physics2D.OverlapArea(pointA, pointB, attackFilter, colliderAttack);
-        //Debug.Log("Se esta atacando a " + attackedElements);
 
         for (int i=0; i < attackedElements; i++)
         {
             attackedObject = colliderAttack[i].gameObject;
             if (attackedObject.GetComponent<Attackable>())
             {
-                attackedObject.GetComponent<Attackable>().ReceiveAttack();
+                attackedObject.GetComponent<Attackable>().ReceiveAttack(attackDirection, damage);
             }
         }
     }
