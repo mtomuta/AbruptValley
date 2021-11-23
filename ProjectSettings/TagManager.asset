@@ -9,6 +9,10 @@ TagManager:
   - OptionsMenu
   - Timer
   - SpawnPoint
+  - HealthSprite
+  - ManaSprite
+  - Skeleton
+  - Bringer
   layers:
   - Default
   - TransparentFX
@@ -18,7 +22,7 @@ TagManager:
   - UI
   - Interactable
   - Player
-  - 
+  - Dead
   - Layer 1
   - Layer 2
   - Layer 3
@@ -156,4 +160,7 @@ TagManager:
     locked: 0
   - name: Layer 3
     uniqueID: 4178938237
+    locked: 0
+  - name: LevelUpText
+    uniqueID: 3795405973
     locked: 0

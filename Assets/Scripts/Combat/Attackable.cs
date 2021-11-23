@@ -13,11 +13,6 @@ public class Attackable : MonoBehaviour
         myRigidbody = GetComponent<Rigidbody2D>();
     }
 
-    //public void ReceiveAttack()
-    //{
-    //    myHealth.ActualHealth -= 1;
-    //}
-
     public void ReceiveAttack(Vector2 attackDirection, int damage)
     {
         myHealth.UpdateActualHealth(damage);

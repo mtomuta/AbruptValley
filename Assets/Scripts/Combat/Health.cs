@@ -9,7 +9,7 @@ public class Health : MonoBehaviour
     public int baseHealth;
     public int actualHealth;
 
-    public Transform currentHealthBar;
+    public Image currentHealthBar;
     public UnityEvent onDeath;
 
     public int ActualHealth
@@ -31,6 +31,7 @@ public class Health : MonoBehaviour
             else
             {
                 actualHealth = 0;
+                gameObject.layer = 8;
                 if (onDeath != null)
                 {
                     onDeath.Invoke();
@@ -54,9 +55,9 @@ public class Health : MonoBehaviour
     {
         if (currentHealthBar)
         {
-            Vector3 scale = new Vector3((float)ActualHealth / baseHealth, 1, 1);
-            currentHealthBar.localScale = scale;
-            //currentHealthBar.fillAmount = (float)ActualHealth / baseHealth;
+            //Vector3 scale = new Vector3((float)ActualHealth / baseHealth, 1, 1);
+            //currentHealthBar.localScale = scale;
+            currentHealthBar.fillAmount = (float)ActualHealth / baseHealth;
         }
     }
 

@@ -4,7 +4,7 @@ using UnityEngine;
 
 [RequireComponent(typeof(Health))]
 [RequireComponent(typeof(InputEnemy))]
-public class EnemyAI : MonoBehaviour
+public class EnemyAI : Enemy
 {
     private bool dead;
     private bool aggro;
@@ -16,13 +16,14 @@ public class EnemyAI : MonoBehaviour
     private int deathHashCode;
 
     protected Patrolling patrolling;
+    protected PatrollingReverseSprite patrollingReverseSprite;
     protected InputEnemy input;
     private Attacker attacker;
     protected SpriteRenderer spriteRenderer;
     private Animator animator;
     private Vector2 attackDirection;
     private Rigidbody2D myRigidbody2D;
-    public Attributes attributes;
+    //public Attributes attributes;
 
     [SerializeField] private float aggroDistance;
     [SerializeField] private float attackDistance;
@@ -33,6 +34,7 @@ public class EnemyAI : MonoBehaviour
         attacker = GetComponent<Attacker>();
         input = GetComponent<InputEnemy>();
         patrolling = GetComponent<Patrolling>();
+        patrollingReverseSprite = GetComponent<PatrollingReverseSprite>();
         spriteRenderer = GetComponent<SpriteRenderer>();
         attackHashCode = Animator.StringToHash("Attack");
         deathHashCode = Animator.StringToHash("Death");
@@ -60,7 +62,14 @@ public class EnemyAI : MonoBehaviour
             else if (input.playerDistance > aggroDistance)
             {
                 AggroOff();
-                patrolling.Patrol();
+                if (gameObject.CompareTag("Skeleton"))
+                {
+                    patrolling.Patrol();
+                }
+                else if (gameObject.CompareTag("Bringer"))
+                {
+                    patrollingReverseSprite.Patrol();
+                }
                 //myRigidbody2D.velocity = Vector2.zero;
                 //myRigidbody2D.Sleep();
                 //Debug.Log("No estoy a distancia");

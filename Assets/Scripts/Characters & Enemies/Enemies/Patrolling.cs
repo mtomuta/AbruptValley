@@ -31,7 +31,7 @@ public class Patrolling : MonoBehaviour
     void Update()
     {
         Patrol();
-        FlipSprite();
+        FlipPatrolSprite();
 
         if (Vector2.Distance(transform.position, moveToPoint.position) < 0.2f)
         {
@@ -53,7 +53,7 @@ public class Patrolling : MonoBehaviour
         transform.position = Vector2.MoveTowards(transform.position, moveToPoint.position, attributes.speed * Time.deltaTime);
     }
 
-    void FlipSprite()
+    protected virtual void FlipPatrolSprite()
     {
         if (transform.position.x > currentXPosition)
         {

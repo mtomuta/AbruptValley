@@ -6,18 +6,20 @@ public class Attacker : MonoBehaviour
 {
     public float offSet = 1f;
 
-    public Vector2 hitBox = new Vector2(1,1);
+    public Vector2 hitBox = new Vector2(1, 1);
     private Vector2 attackVectorOffSet;
     private Vector2 pointA, pointB;
 
     public LayerMask attackLayer;
     private Collider2D[] colliderAttack = new Collider2D[10];
     private ContactFilter2D attackFilter;
+    private TextHitGenerator textHitGenerator;
 
     private void Start()
     {
         attackFilter.layerMask = attackLayer;
         attackFilter.useLayerMask = true;
+        textHitGenerator = GetComponent<TextHitGenerator>();
     }
 
     private void Update()
@@ -32,13 +34,23 @@ public class Attacker : MonoBehaviour
         GameObject attackedObject;
         int attackedElements = Physics2D.OverlapArea(pointA, pointB, attackFilter, colliderAttack);
 
-        for (int i=0; i < attackedElements; i++)
+        for (int i = 0; i < attackedElements; i++)
         {
             attackedObject = colliderAttack[i].gameObject;
             if (attackedObject.GetComponent<Attackable>())
             {
                 attackedObject.GetComponent<Attackable>().ReceiveAttack(attackDirection, damage);
+                GenerateTextHit(damage, attackedObject);
             }
+        }
+    }
+
+    private void GenerateTextHit(int damage, GameObject attackedObject)
+    {
+        if (textHitGenerator)
+        {
+            //textHitGenerator.CreateTextHit(textHitGenerator.textHit, damage, attackedObject.transform, 0.5f, Color.white, textHitGenerator.defaultRangeX, textHitGenerator.defaultRangeY, 2f);
+            textHitGenerator.CreateTextHit(damage, attackedObject.transform);
         }
     }
 

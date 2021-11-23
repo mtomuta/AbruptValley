@@ -7,14 +7,15 @@ using UnityEngine.EventSystems;
 public class Interactable : MonoBehaviour, IPointerDownHandler
 {
     protected BoxCollider2D myCollider;
-    protected PlayerController jugador;
+    protected PlayerController player;
     public UnityEvent onInteraction;
+    public UnityEvent onWalkAway;
 
     private void Start()
     {
         myCollider = GetComponent<BoxCollider2D>();
-        jugador = FindObjectOfType<PlayerController>();
-        //jugador = GameManager.instance.player.GetComponent<PlayerController>();
+        player = FindObjectOfType<PlayerController>();
+        //player = GameManager.instance.player.GetComponent<PlayerController>();
     }
 
     private void Update()
@@ -25,10 +26,15 @@ public class Interactable : MonoBehaviour, IPointerDownHandler
         }
     }
 
-    //private void OnTriggerEnter2D(Collider2D collision)
-    //{
-        //onInteraction?.Invoke();
-    //}
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        onInteraction?.Invoke();
+    }
+
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        onWalkAway?.Invoke();
+    }
 
     public void OnPointerDown(PointerEventData eventData)
     {
@@ -37,7 +43,7 @@ public class Interactable : MonoBehaviour, IPointerDownHandler
 
     private void Interact()
     {
-        foreach (RaycastHit2D interactable in jugador.Interact())
+        foreach (RaycastHit2D interactable in player.Interact())
         {
             if (interactable.collider.gameObject == gameObject)
             {

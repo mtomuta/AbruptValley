@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<ArrayOfDialogue xmlns:xsd="http://w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+ <Dialogue>
+   <lines>
+     <string>Hola aventurero</string>
+	 <string>Bienvenido al valle</string>
+	 <string>Que tengas suerte allí fuera</string>
+   </lines>
+   <id>Merchant</id>
+ </Dialogue>
+ <Dialogue>
+   <lines>
+     <string>Cuentan las leyendas...</string>
+	 <string>Que esta mazmorra no era tan oscura</string>
+	 <string>¿Qué habrá pasado?</string>
+   </lines>
+   <id>Symbol2</id>
+ </Dialogue>
+</ArrayOfDialogue>

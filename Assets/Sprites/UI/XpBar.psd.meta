@@ -17,6 +17,9 @@ TextureImporter:
   - first:
       213: 998394803384845531
     second: XpBar_4
+  - first:
+      213: 4585279413103974835
+    second: XpBar_5
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -123,7 +126,7 @@ TextureImporter:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 74.4
+        width: 62
         height: 6
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -142,9 +145,9 @@ TextureImporter:
       name: XpBar_1
       rect:
         serializedVersion: 2
-        x: 74
+        x: 62
         y: 0
-        width: 74.4
+        width: 62
         height: 6
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -163,9 +166,9 @@ TextureImporter:
       name: XpBar_2
       rect:
         serializedVersion: 2
-        x: 148
+        x: 124
         y: 0
-        width: 74.4
+        width: 62
         height: 6
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -184,9 +187,9 @@ TextureImporter:
       name: XpBar_3
       rect:
         serializedVersion: 2
-        x: 222
+        x: 186
         y: 0
-        width: 74.4
+        width: 62
         height: 6
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -205,9 +208,9 @@ TextureImporter:
       name: XpBar_4
       rect:
         serializedVersion: 2
-        x: 296
+        x: 248
         y: 0
-        width: 74.4
+        width: 62
         height: 6
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -218,6 +221,27 @@ TextureImporter:
       bones: []
       spriteID: bd48951b8c20bdd00800000000000000
       internalID: 998394803384845531
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: XpBar_5
+      rect:
+        serializedVersion: 2
+        x: 310
+        y: 0
+        width: 62
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3b959f5155f22af30800000000000000
+      internalID: 4585279413103974835
       vertices: []
       indices: 
       edges: []
