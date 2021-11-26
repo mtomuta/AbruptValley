@@ -7,10 +7,14 @@ using UnityEngine.Events;
 public class Health : MonoBehaviour
 {
     public int baseHealth;
-    public int actualHealth;
+    public int healthModifier;
+
+    private int actualHealth;
 
     public Image currentHealthBar;
     public UnityEvent onDeath;
+
+    public int health { get { return baseHealth + healthModifier; } }
 
     public int ActualHealth
     {
@@ -20,13 +24,13 @@ public class Health : MonoBehaviour
         }
         set
         {
-            if (value > 0 && value<=baseHealth)
+            if (value > 0 && value<= health)
             {
                 actualHealth = value;
             }
-            else if (value > baseHealth)
+            else if (value > health)
             {
-                actualHealth = baseHealth;
+                actualHealth = health;
             }
             else
             {
@@ -42,7 +46,7 @@ public class Health : MonoBehaviour
 
     void Start()
     {
-        ActualHealth = baseHealth;
+        ActualHealth = health;
     }
 
     public void UpdateActualHealth(int damage)
@@ -57,8 +61,14 @@ public class Health : MonoBehaviour
         {
             //Vector3 scale = new Vector3((float)ActualHealth / baseHealth, 1, 1);
             //currentHealthBar.localScale = scale;
-            currentHealthBar.fillAmount = (float)ActualHealth / baseHealth;
+            currentHealthBar.fillAmount = (float)ActualHealth / health;
         }
+    }
+
+    public void ModifyBaseHealth(int amount)
+    {
+        baseHealth += amount;
+        UpdateHealthBar();
     }
 
     public void RespawnBaseHealth()

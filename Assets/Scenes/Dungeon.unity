@@ -1819,7 +1819,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   baseHealth: 1
-  actualHealth: 0
+  healthModifier: 0
   currentHealthBar: {fileID: 0}
   onDeath:
     m_PersistentCalls:
@@ -2013,7 +2013,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   baseHealth: 1
-  actualHealth: 0
+  healthModifier: 0
   currentHealthBar: {fileID: 0}
   onDeath:
     m_PersistentCalls:
@@ -7088,7 +7088,7 @@ RectTransform:
   - {fileID: 1943617288}
   - {fileID: 669027721}
   m_Father: {fileID: 0}
-  m_RootOrder: 16
+  m_RootOrder: 15
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -7572,7 +7572,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   baseHealth: 5
-  actualHealth: 0
+  healthModifier: 0
   currentHealthBar: {fileID: 0}
   onDeath:
     m_PersistentCalls:
@@ -7724,7 +7724,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   baseHealth: 1
-  actualHealth: 0
+  healthModifier: 0
   currentHealthBar: {fileID: 0}
   onDeath:
     m_PersistentCalls:
@@ -24495,7 +24495,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   baseHealth: 1
-  actualHealth: 0
+  healthModifier: 0
   currentHealthBar: {fileID: 0}
   onDeath:
     m_PersistentCalls:
@@ -26160,7 +26160,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   baseHealth: 1
-  actualHealth: 0
+  healthModifier: 0
   currentHealthBar: {fileID: 0}
   onDeath:
     m_PersistentCalls:
@@ -27777,7 +27777,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   baseHealth: 1
-  actualHealth: 0
+  healthModifier: 0
   currentHealthBar: {fileID: 0}
   onDeath:
     m_PersistentCalls:
@@ -28018,7 +28018,7 @@ RectTransform:
   m_Children:
   - {fileID: 128889576}
   m_Father: {fileID: 0}
-  m_RootOrder: 14
+  m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -48297,7 +48297,7 @@ Transform:
   - {fileID: 215345809}
   - {fileID: 682566093}
   m_Father: {fileID: 0}
-  m_RootOrder: 15
+  m_RootOrder: 14
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1467298729
 GameObject:
@@ -48447,6 +48447,90 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 0}
+--- !u!1 &1467983434
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1467983438}
+  - component: {fileID: 1467983437}
+  - component: {fileID: 1467983436}
+  m_Layer: 0
+  m_Name: Global Volume
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1467983436
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1467983434}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 915058937bb6b2c42a10fc6915cc28bc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  timeDisplay: {fileID: 0}
+  postProcessingVolume: {fileID: 0}
+  tick: 1000
+  seconds: 0
+  mins: 0
+  hours: 12
+  activeLights: 0
+  lights:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+--- !u!114 &1467983437
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1467983434}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 172515602e62fb746b5d573b38a5fe58, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isGlobal: 1
+  priority: 0
+  blendDistance: 0
+  weight: 0.5
+  sharedProfile: {fileID: 11400000, guid: 316320ffead3422428750eb999c9ccbf, type: 2}
+--- !u!4 &1467983438
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1467983434}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -10.662409, y: 15.979113, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 17
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1475302255
 GameObject:
   m_ObjectHideFlags: 0
@@ -48542,7 +48626,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   baseHealth: 1
-  actualHealth: 0
+  healthModifier: 0
   currentHealthBar: {fileID: 0}
   onDeath:
     m_PersistentCalls:
@@ -135846,7 +135930,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   baseHealth: 10
-  actualHealth: 0
+  healthModifier: 0
   currentHealthBar: {fileID: 0}
   onDeath:
     m_PersistentCalls:
@@ -136210,7 +136294,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   baseHealth: 1
-  actualHealth: 0
+  healthModifier: 0
   currentHealthBar: {fileID: 0}
   onDeath:
     m_PersistentCalls:
@@ -136521,7 +136605,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   baseHealth: 1
-  actualHealth: 0
+  healthModifier: 0
   currentHealthBar: {fileID: 0}
   onDeath:
     m_PersistentCalls:
@@ -137351,7 +137435,7 @@ MonoBehaviour:
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_Intensity: 1
   m_LightVolumeOpacity: 0
-  m_ApplyToSortingLayers: 0000000027dcd8b3b1a275ec192cebfb7f5795857f398e26e72b29f125edb200b511b53331b4f6676bed90e74fd161e80f81001eadf2c6578f49c3aec992ae681fe1e9ab2553211ca16d4a5db31736508b91781423e703dee1618339a1b80c8a5ba3f29feffcf6cac1b1f086f3c6c2aa83fe1699e1f0f8e99f569b681b68b75b53c363087706b26d8733fdae
+  m_ApplyToSortingLayers: 0000000027dcd8b3b1a275ec192cebfb7f5795857f398e26e72b29f125edb200b511b53331b4f6676bed90e74fd161e80f81001eadf2c6578f49c3aec992ae681fe1e9ab2553211c8b917814b317365023e703dee1618339a1b80c8a5ba3f29feffcf6cac1b1f086f3c6c2aa83fe1699e1f0f8e99f569b681b68b75b53c363087706b26d8733fdaef9b12f23834672caab6ac0107d8915f9954c39e2
   m_LightCookieSprite: {fileID: 0}
   m_UseNormalMap: 0
   m_LightOrder: 0
@@ -137386,7 +137470,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 13
+  m_RootOrder: 16
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1894225323
 GameObject:
@@ -138176,7 +138260,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   baseHealth: 1
-  actualHealth: 0
+  healthModifier: 0
   currentHealthBar: {fileID: 0}
   onDeath:
     m_PersistentCalls:
@@ -138384,7 +138468,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   baseHealth: 1
-  actualHealth: 0
+  healthModifier: 0
   currentHealthBar: {fileID: 0}
   onDeath:
     m_PersistentCalls:
@@ -139715,7 +139799,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   baseHealth: 1
-  actualHealth: 0
+  healthModifier: 0
   currentHealthBar: {fileID: 0}
   onDeath:
     m_PersistentCalls:

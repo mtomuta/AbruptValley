@@ -9,10 +9,12 @@ public class PlayerController : MonoBehaviour
     private float vertical;
     
     private Animator animator;
-    private InputPlayer inputPlayer;
-    private Rigidbody2D myRigidbody2D;
-    private Transform transformed;
     private Attacker attacker;
+    private InputPlayer inputPlayer;
+    private Health health;
+    private LvlExperience lvlExperience;
+    private Rigidbody2D myRigidbody2D;
+
     public Attributes playerAttributes;
     public LayerMask interactionLayer;
 
@@ -25,14 +27,16 @@ public class PlayerController : MonoBehaviour
 
     void Start()
     {
-        inputPlayer = GetComponent<InputPlayer>();
-        transformed = GetComponent<Transform>();
-        myRigidbody2D = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
         attacker = GetComponent<Attacker>();
-        deathHashCode = Animator.StringToHash("Death");
+        health = GetComponent<Health>();
+        inputPlayer = GetComponent<InputPlayer>();
+        lvlExperience = GetComponent<LvlExperience>();
+        myRigidbody2D = GetComponent<Rigidbody2D>();
         attackingHashCode = Animator.StringToHash("Attacking");
+        deathHashCode = Animator.StringToHash("Death");
         runningHashCode = Animator.StringToHash("Running");
+        AttributePanel.instance.UpdateAttributePoints(playerAttributes, health, lvlExperience);
 
         if (!playerExists)
         {

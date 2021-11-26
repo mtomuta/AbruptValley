@@ -9,6 +9,6 @@ public class Enemy : MonoBehaviour
 
     public void GiveXp()
     {
-        GameManager.instance.player.GetComponent<Experience>().xp += xp;
+        GameManager.instance.player.GetComponent<LvlExperience>().xp += xp;
     }
 }
