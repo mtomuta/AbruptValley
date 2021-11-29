@@ -37,11 +37,11 @@ public class DayNightCycle : MonoBehaviour
 
     void FixedUpdate() 
     {
-        CalcTime();
+        CalculateTime();
         DisplayTime();
     }
 
-    public void CalcTime()
+    public void CalculateTime()
     {
         seconds += Time.fixedDeltaTime * tick;
 
