@@ -22,8 +22,10 @@ public class PlayerController : MonoBehaviour
     int attackingHashCode;
     int runningHashCode;
 
+    private float timeStepSound = 0;
     private bool dead;
     private static bool playerExists;
+    public bool canMove = true;
 
     void Start()
     {
@@ -58,6 +60,7 @@ public class PlayerController : MonoBehaviour
         {
             SetXYAnimator();
             animator.SetBool(runningHashCode, true);
+            PlayFootstepSound();
         }
         else
         {
@@ -67,6 +70,7 @@ public class PlayerController : MonoBehaviour
         if (Input.GetButtonDown("Attack"))
         {
             animator.SetBool(attackingHashCode, true);
+            PlaySwordAttackSound();
         }
     }
 
@@ -100,6 +104,7 @@ public class PlayerController : MonoBehaviour
     {
         dead = true;
         animator.SetBool(deathHashCode, true);
+        PlayDeathSound();
         //Time.timeScale = 0f;
     }
 
@@ -122,5 +127,24 @@ public class PlayerController : MonoBehaviour
         {
             return null;
         }
+    }
+
+    private void PlayFootstepSound()
+    {
+        if (Time.time - timeStepSound > 0.5f)
+        {
+            SoundManager.PlaySound("footstep");
+            timeStepSound = Time.time;
+        }
+    }
+
+    private void PlaySwordAttackSound()
+    {
+        SoundManager.PlaySound("playerSwordAttack");
+    }
+
+    private void PlayDeathSound()
+    {
+        SoundManager.PlaySound("playerDeath");
     }
 }

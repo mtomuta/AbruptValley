@@ -2,18 +2,74 @@
 <ArrayOfDialogue xmlns:xsd="http://w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
  <Dialogue>
    <lines>
-     <string>Hola aventurero</string>
-	 <string>Bienvenido al valle</string>
-	 <string>Que tengas suerte allí fuera</string>
+     <string>Welcome adventurer.</string>
+	 <string>Listen to me...</string>
+	 <string>I perceive in your eyes the need to go explore the Dungeons.</string>
+	 <string>But the hard truth is this.</string>
+	 <string>You are the only hope we have left.</string>
+	 <string>It is dangerous to go alone, but you must trust yourself.</string>
+	 <string>I will be waiting for you. Now, you must go.</string>
    </lines>
    <id>Merchant</id>
  </Dialogue>
  <Dialogue>
    <lines>
-     <string>Cuentan las leyendas...</string>
-	 <string>Que esta mazmorra no era tan oscura</string>
-	 <string>¿Qué habrá pasado?</string>
+     <string>Remember not to be defeated if you still want to keep your soul pure.</string>
    </lines>
-   <id>Symbol2</id>
+   <id>Rune1</id>
+ </Dialogue>
+ <Dialogue>
+   <lines>
+     <string>Your soul is your life force, it determines who you are and where you go.</string>
+   </lines>
+   <id>Rune2</id>
+ </Dialogue>
+ <Dialogue>
+   <lines>
+     <string>The only safe place is the Valley.</string>
+   </lines>
+   <id>Rune3</id>
+ </Dialogue>
+ <Dialogue>
+   <lines>
+     <string>You have just condemned yourself to something worse than death.</string>
+   </lines>
+   <id>Rune4</id>
+ </Dialogue>
+ <Dialogue>
+   <lines>
+     <string>Too many brave souls have risked their lives exploring the Dungeons.</string>
+   </lines>
+   <id>Rune5</id>
+ </Dialogue>
+ <Dialogue>
+   <lines>
+     <string>No one can avoid corruption.</string>
+   </lines>
+   <id>Rune6</id>
+ </Dialogue>
+ <Dialogue>
+   <lines>
+     <string>We lost everything we had achieved.</string>
+   </lines>
+   <id>Rune7</id>
+ </Dialogue>
+ <Dialogue>
+   <lines>
+     <string>Here, time seems endless.</string>
+   </lines>
+   <id>Rune8</id>
+ </Dialogue>
+ <Dialogue>
+   <lines>
+     <string>When your soul is hunted, you can not hide forever.</string>
+   </lines>
+   <id>Rune9</id>
+ </Dialogue>
+ <Dialogue>
+   <lines>
+     <string>The world had never seen anything like this. We were not even prepared for it.</string>
+   </lines>
+   <id>Rune10</id>
  </Dialogue>
 </ArrayOfDialogue>

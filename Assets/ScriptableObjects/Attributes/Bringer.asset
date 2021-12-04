@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: Bringer
   m_EditorClassIdentifier: 
   baseAttack: 1
-  speed: 1
+  speed: 0.5

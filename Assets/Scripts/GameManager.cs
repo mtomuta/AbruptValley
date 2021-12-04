@@ -1,11 +1,12 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class GameManager : MonoBehaviour
+public class GameManager: MonoBehaviour
 {
     public static GameManager instance { get; private set; }
-    public Transform playerSpawnPoint;
+    //public Transform playerSpawnPoint;
     public PlayerController player;
 
     private static bool gameManager;
@@ -20,9 +21,8 @@ public class GameManager : MonoBehaviour
 
     void Start()
     {
-        playerSpawnPoint = FindObjectOfType<SpawnPoint>().transform;
         player = FindObjectOfType<PlayerController>();
-        player.transform.position = playerSpawnPoint.position;
+        GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>().position = GameObject.Find("SpawnPoint").transform.position;
 
         if (!gameManager)
         {
@@ -33,11 +33,5 @@ public class GameManager : MonoBehaviour
         {
             Destroy(gameObject);
         }
-    }
-
-    void Update()
-    {
-        //playerSpawnPoint = FindObjectOfType<RespawnPoint>().transform;
-        //playerSpawnPoint.position = new Vector2(-11, 28);
     }
 }

@@ -20,4 +20,11 @@ public class BringerController : EnemyAI
             spriteRenderer.flipX = true;
         }
     }
+
+    protected override void Dead()
+    {
+        dead = true;
+        animator.SetBool(deathHashCode, true);
+        SoundManager.PlaySound("bringerDeath");
+    }
 }

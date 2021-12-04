@@ -6,21 +6,21 @@ using UnityEngine;
 [RequireComponent(typeof(InputEnemy))]
 public class EnemyAI : Enemy
 {
-    private bool dead;
+    protected bool dead;
     private bool aggro;
     private bool attacking;
     private bool inCombat;
 
     private int attackHashCode;
     private int walkingHashCode;
-    private int deathHashCode;
+    protected int deathHashCode;
 
     protected Patrolling patrolling;
     protected PatrollingReverseSprite patrollingReverseSprite;
     protected InputEnemy input;
     private Attacker attacker;
     protected SpriteRenderer spriteRenderer;
-    private Animator animator;
+    protected Animator animator;
     private Vector2 attackDirection;
     private Rigidbody2D myRigidbody2D;
     //public Attributes attributes;
@@ -134,7 +134,7 @@ public class EnemyAI : Enemy
         attacking = false;
     }
 
-    public void Dead()
+    protected virtual void Dead()
     {
         dead = true;
         animator.SetBool(deathHashCode, true);

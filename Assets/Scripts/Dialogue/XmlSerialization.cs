@@ -1,8 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using System.Xml.Serialization;
 using System.IO;
+using System.Xml.Serialization;
 
 public class XmlSerialization
 {
@@ -18,8 +18,8 @@ public class XmlSerialization
     {
         XmlSerializer serializer = new XmlSerializer(typeof(T));
         StreamReader reader = new StreamReader(path);
-        T objeto = (T)serializer.Deserialize(reader.BaseStream);
+        T objecto = (T)serializer.Deserialize(reader.BaseStream);
         reader.Close();
-        return objeto;
+        return objecto;
     }
 }

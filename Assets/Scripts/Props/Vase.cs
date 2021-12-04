@@ -17,5 +17,6 @@ public class Vase : MonoBehaviour
     public void Destroy()
     {
         animator.SetBool(destroyHashCode, true);
+        SoundManager.PlaySound("vaseBreak");
     }
 }

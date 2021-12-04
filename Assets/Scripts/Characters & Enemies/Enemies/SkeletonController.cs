@@ -8,4 +8,11 @@ public class SkeletonController : EnemyAI
     {
         Behaviour();
     }
+
+    protected override void Dead()
+    {
+        dead = true;
+        animator.SetBool(deathHashCode, true);
+        SoundManager.PlaySound("skeletonDeath");
+    }
 }

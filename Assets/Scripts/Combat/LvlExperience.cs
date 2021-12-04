@@ -80,6 +80,7 @@ public class LvlExperience : MonoBehaviour
         level++;
         NextLevel();
         textHitGenerator.CreateTextHit(textHitGenerator.textHit, "LEVEL UP", transform, 5f, Color.cyan, levelUpTextRange, levelUpTextRange, 2f);
+        SoundManager.PlaySound("levelUp");
         percentXpActualLevel = (float)(xp - ExperienceAccumulated(level)) / xpNextLevel;
     }
 

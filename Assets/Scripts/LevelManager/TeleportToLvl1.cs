@@ -18,7 +18,7 @@ public class TeleportToLvl1 : MonoBehaviour
         if (collision.gameObject.tag == "Player" && TeleportToLvl1.StartTeleport == 1)
         {
             TeleportToLvl1.StartTeleport = 0;
-            StartCoroutine(WaitForSceneLoad());
+            StartCoroutine(WaitAndUnfreeze());
         }
     }
 
@@ -26,12 +26,25 @@ public class TeleportToLvl1 : MonoBehaviour
     {
         //yield return new WaitForSeconds(1);
         animator.SetTrigger("Fade");
-        yield return new WaitUntil(()=>black.color.a == 1);
+        yield return new WaitUntil(() => black.color.a == 1);
         SceneManager.LoadScene("Valley");
+        FreezePosition();
+    }
 
-        //GameManager.Player.transform.position = GameManager.playerSpawnPoint.position;
-        //Player.transform.position = new Vector2(-11,28);
-        //gm.player.transform.position = gm.playerSpawnPoint.position;
-        //gm.playerSpawnPoint = FindObjectOfType<RespawnPoint>().transform;
+    IEnumerator WaitAndUnfreeze()
+    {
+        yield return WaitForSceneLoad();
+        UnfreezePosition();
+    }
+
+    void FreezePosition()
+    {
+        GameObject.FindGameObjectWithTag("Player").GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezePosition;
+    }
+
+    void UnfreezePosition()
+    {
+        GameObject.FindGameObjectWithTag("Player").GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.None;
+        GameObject.FindGameObjectWithTag("Player").GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezeRotation;
     }
 }

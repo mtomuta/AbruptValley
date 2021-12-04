@@ -13,6 +13,10 @@ TagManager:
   - ManaSprite
   - Skeleton
   - Bringer
+  - RespawnPoint
+  - SoundManager
+  - MusicSlider
+  - SoundSlider
   layers:
   - Default
   - TransparentFX

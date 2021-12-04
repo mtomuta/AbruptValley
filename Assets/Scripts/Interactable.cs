@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.EventSystems;
 
-public class Interactable : MonoBehaviour, IPointerDownHandler
+public class Interactable : MonoBehaviour //IPointerDownHandler
 {
     protected BoxCollider2D myCollider;
     protected PlayerController player;
@@ -26,20 +26,20 @@ public class Interactable : MonoBehaviour, IPointerDownHandler
         }
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        onInteraction?.Invoke();
-    }
+    //private void OnTriggerEnter2D(Collider2D collision)
+    //{
+    //    onInteraction?.Invoke();
+    //}
 
     private void OnTriggerExit2D(Collider2D collision)
     {
         onWalkAway?.Invoke();
     }
 
-    public void OnPointerDown(PointerEventData eventData)
-    {
-        Interact();
-    }
+    //public void OnPointerDown(PointerEventData eventData)
+    //{
+    //    Interact();
+    //}
 
     private void Interact()
     {
