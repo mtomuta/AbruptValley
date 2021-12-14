@@ -6,7 +6,7 @@ using UnityEngine.UI;
 [RequireComponent(typeof(AudioSource))]
 public class SoundManager : MonoBehaviour
 {
-    public static AudioClip bringerDeath, footstep, levelUp, playerDeath, playerHeal, playerSwordAttack, skeletonDeath, skeletonWalk, vaseBreak;
+    public static AudioClip bringerDeath, closeChest, footstep, levelUp, openChest, playerDeath, playerHeal, playerSwordAttack, skeletonDeath, skeletonWalk, vaseBreak;
     public static AudioSource audio;
 
     private void Start()
@@ -14,8 +14,10 @@ public class SoundManager : MonoBehaviour
         audio = GameObject.FindWithTag("SoundManager").GetComponent<AudioSource>();
 
         bringerDeath = Resources.Load<AudioClip>("bringerDeath");
+        closeChest = Resources.Load<AudioClip>("closeChest");
         footstep = Resources.Load<AudioClip>("footstep");
         levelUp = Resources.Load<AudioClip>("levelUp");
+        openChest = Resources.Load<AudioClip>("openChest");
         playerDeath = Resources.Load<AudioClip>("playerDeath");
         playerHeal = Resources.Load<AudioClip>("playerHeal");
         playerSwordAttack = Resources.Load<AudioClip>("playerSwordAttack");
@@ -33,6 +35,11 @@ public class SoundManager : MonoBehaviour
                 audio.volume = 0.5f;
                 break;
 
+            case "closeChest":
+                audio.PlayOneShot(closeChest);
+                audio.volume = 0.3f;
+                break;
+
             case "footstep":
                 audio.PlayOneShot(footstep);
                 audio.volume = 0.1f;
@@ -41,6 +48,11 @@ public class SoundManager : MonoBehaviour
             case "levelUp":
                 audio.PlayOneShot(levelUp);
                 audio.volume = 0.5f;
+                break;
+
+            case "openChest":
+                audio.PlayOneShot(openChest);
+                audio.volume = 0.3f;
                 break;
 
             case "playerDeath":

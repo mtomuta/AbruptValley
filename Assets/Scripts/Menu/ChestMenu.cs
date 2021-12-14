@@ -23,11 +23,13 @@ public class ChestMenu : MonoBehaviour
         {
             image.sprite = closedChest;
             opened = false;
+            SoundManager.PlaySound("closeChest");
         } 
         else
         {
             image.sprite = openedChest;
             opened = true;
+            SoundManager.PlaySound("openChest");
         }
     }
 }

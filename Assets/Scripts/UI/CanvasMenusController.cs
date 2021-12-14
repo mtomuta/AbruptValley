@@ -2,11 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CanvasController : MonoBehaviour
+public class CanvasMenusController : MonoBehaviour
 {
     private static bool canvasExists;
 
-    void Start()
+    void Awake()
     {
         if (!canvasExists)
         {

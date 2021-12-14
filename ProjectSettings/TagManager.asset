@@ -18,6 +18,10 @@ TagManager:
   - MusicSlider
   - SoundSlider
   - Guardian
+  - CanvasMenus
+  - CanvasDialogueAndFading
+  - CanvasHealthAndPanel
+  - ControlsMenu
   layers:
   - Default
   - TransparentFX

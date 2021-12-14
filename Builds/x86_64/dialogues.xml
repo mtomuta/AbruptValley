@@ -14,7 +14,7 @@
  </Dialogue>
  <Dialogue>
    <lines>
-     <string>Let me heal you.</string>
+     <string>Wait, let me heal you.</string>
    </lines>
    <id>Guardian</id>
  </Dialogue>
