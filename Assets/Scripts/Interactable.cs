@@ -11,6 +11,8 @@ public class Interactable : MonoBehaviour //IPointerDownHandler
     public UnityEvent onInteraction;
     public UnityEvent onWalkAway;
 
+    protected Health health;
+
     private void Start()
     {
         myCollider = GetComponent<BoxCollider2D>();
@@ -41,7 +43,7 @@ public class Interactable : MonoBehaviour //IPointerDownHandler
     //    Interact();
     //}
 
-    private void Interact()
+    public virtual void Interact()
     {
         foreach (RaycastHit2D interactable in player.Interact())
         {
@@ -55,5 +57,12 @@ public class Interactable : MonoBehaviour //IPointerDownHandler
     public virtual void Interaction()
     {
         onInteraction?.Invoke();
+    }
+
+    public virtual void InteractionHeal()
+    {
+        player.GetComponent<Health>().ActualHealth = 6;
+        player.GetComponent<Health>().currentHealthBar.fillAmount = (float)player.GetComponent<Health>().ActualHealth / player.GetComponent<Health>().health;
+        SoundManager.PlaySound("playerHeal");
     }
 }

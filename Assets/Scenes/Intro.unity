@@ -322,6 +322,26 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 4381682082275968544, guid: 4fb46f40aa424924397427b691fe078d, type: 3}
+      propertyPath: m_FontData.m_Font
+      value: 
+      objectReference: {fileID: 12800000, guid: 4eb8f06535139004fa38a34debb30ff3, type: 3}
+    - target: {fileID: 4381682082446029738, guid: 4fb46f40aa424924397427b691fe078d, type: 3}
+      propertyPath: m_FontData.m_Font
+      value: 
+      objectReference: {fileID: 12800000, guid: 4eb8f06535139004fa38a34debb30ff3, type: 3}
+    - target: {fileID: 4381682082485252555, guid: 4fb46f40aa424924397427b691fe078d, type: 3}
+      propertyPath: m_Text
+      value: "Long dreaming of eradicating \nthe corruption."
+      objectReference: {fileID: 0}
+    - target: {fileID: 4381682082485252555, guid: 4fb46f40aa424924397427b691fe078d, type: 3}
+      propertyPath: m_FontData.m_Font
+      value: 
+      objectReference: {fileID: 12800000, guid: 4eb8f06535139004fa38a34debb30ff3, type: 3}
+    - target: {fileID: 4381682082523781080, guid: 4fb46f40aa424924397427b691fe078d, type: 3}
+      propertyPath: m_FontData.m_Font
+      value: 
+      objectReference: {fileID: 12800000, guid: 4eb8f06535139004fa38a34debb30ff3, type: 3}
     - target: {fileID: 4381682083224556889, guid: 4fb46f40aa424924397427b691fe078d, type: 3}
       propertyPath: m_SceneBindings.Array.data[0].value
       value: 
@@ -418,6 +438,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4381682083639640145, guid: 4fb46f40aa424924397427b691fe078d, type: 3}
+      propertyPath: m_FontData.m_Font
+      value: 
+      objectReference: {fileID: 12800000, guid: 4eb8f06535139004fa38a34debb30ff3, type: 3}
+    - target: {fileID: 4381682083900242635, guid: 4fb46f40aa424924397427b691fe078d, type: 3}
+      propertyPath: m_FontData.m_Font
+      value: 
+      objectReference: {fileID: 12800000, guid: 4eb8f06535139004fa38a34debb30ff3, type: 3}
+    - target: {fileID: 4381682084352683618, guid: 4fb46f40aa424924397427b691fe078d, type: 3}
+      propertyPath: m_FontData.m_Font
+      value: 
+      objectReference: {fileID: 12800000, guid: 4eb8f06535139004fa38a34debb30ff3, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4fb46f40aa424924397427b691fe078d, type: 3}
 --- !u!1001 &6604946797828996658

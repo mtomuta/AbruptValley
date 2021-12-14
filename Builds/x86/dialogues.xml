@@ -14,6 +14,12 @@
  </Dialogue>
  <Dialogue>
    <lines>
+     <string>Let me heal you.</string>
+   </lines>
+   <id>Guardian</id>
+ </Dialogue>
+ <Dialogue>
+   <lines>
      <string>Remember not to be defeated if you still want to keep your soul pure.</string>
    </lines>
    <id>Rune1</id>
