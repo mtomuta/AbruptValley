@@ -12,6 +12,8 @@ public class DeathMenu : MonoBehaviour
         deathMenuUI.SetActive(false);
         Time.timeScale = 1f;
         SceneManager.LoadScene("Valley");
+        TeleportToLvl1.StartTeleport = 0;
+        TeleportToLvl2.StartTeleport = 0;
     }
 
     public void LoadMenu()
@@ -19,5 +21,7 @@ public class DeathMenu : MonoBehaviour
         deathMenuUI.SetActive(false);
         Time.timeScale = 1f;
         SceneManager.LoadScene("Menu");
+        TeleportToLvl1.StartTeleport = 0;
+        TeleportToLvl2.StartTeleport = 0;
     }
 }

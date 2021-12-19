@@ -8,5 +8,6 @@ public class LoadValleyScene : MonoBehaviour
     void OnEnable()
     {
         SceneManager.LoadScene("Valley", LoadSceneMode.Single);
+        PauseMenu.CanBePaused = true;
     }
 }

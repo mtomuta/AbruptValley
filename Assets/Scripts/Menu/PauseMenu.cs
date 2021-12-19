@@ -7,19 +7,29 @@ using UnityEngine.SceneManagement;
 public class PauseMenu : MonoBehaviour
 {
     public static bool GameIsPaused = false;
+    public static bool CanBePaused = false;
 
     public GameObject pauseMenuUI;
     public GameObject optionsMenuUI;
-    public GameObject characterPanelUI;
+    //public GameObject characterPanelUI;
 
     void Update()
+    {
+        Behaviour();
+    }
+
+    public virtual void Behaviour()
     {
         if (Input.GetKeyDown(KeyCode.Escape))
         {
             if (GameIsPaused)
             {
                 Resume();
-            } 
+            }
+            else if (!CanBePaused)
+            {
+                Resume();
+            }
             else
             {
                 Pause();
@@ -29,25 +39,29 @@ public class PauseMenu : MonoBehaviour
 
     public void Resume()
     {
+        GameIsPaused = false;
+
         pauseMenuUI.SetActive(false);
         optionsMenuUI.SetActive(false);
-        characterPanelUI.SetActive(false);
+        //characterPanelUI.SetActive(false);
         Time.timeScale = 1f;
-        GameIsPaused = false;
     }
 
-    void Pause()
+    public virtual void Pause()
     {
-        characterPanelUI.SetActive(false);
+        GameIsPaused = true;
+
+        //characterPanelUI.SetActive(false);
         pauseMenuUI.SetActive(true);
         Time.timeScale = 0f;
-        GameIsPaused = true;
     }
 
     public void LoadMenu()
     {
         Time.timeScale = 1f;
         SceneManager.LoadScene("Menu");
+        TeleportToLvl1.StartTeleport = 0;
+        TeleportToLvl2.StartTeleport = 0;
     }
 
     public void QuitGame()

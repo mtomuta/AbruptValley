@@ -10,6 +10,8 @@ GameObject:
   m_Component:
   - component: {fileID: 3294146566130788745}
   - component: {fileID: 3294146566130788746}
+  - component: {fileID: 767984351797020930}
+  - component: {fileID: 9210202581627479796}
   m_Layer: 0
   m_Name: Menu_AudioSource
   m_TagString: GameMusic
@@ -127,3 +129,31 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &767984351797020930
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3294146566130788747}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 16f87d5472fd6954c9e9883011e2ac13, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  menuMusic: {fileID: 8300000, guid: 6704b639bf5967d45a85a9172512b8b3, type: 3}
+  introMusic: {fileID: 8300000, guid: e376ebaa7de80cc47a08c468f6ed8a9c, type: 3}
+  valleyMusic: {fileID: 8300000, guid: 6704b639bf5967d45a85a9172512b8b3, type: 3}
+  dungeonMusic: {fileID: 8300000, guid: 3b5f1f62831bc354cad952d89c05f274, type: 3}
+--- !u!114 &9210202581627479796
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3294146566130788747}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 99f505c59dbebdb4c9d85eff86d7e59e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

@@ -22,6 +22,24 @@ TagManager:
   - CanvasDialogueAndFading
   - CanvasHealthAndPanel
   - ControlsMenu
+  - CanvasOptionsMenu
+  - CanvasHealthSystem
+  - CanvasCharacterPanel
+  - CanvasMainMenu
+  - Chests
+  - MainMenu
+  - SoundController
+  - MusicController
+  - CanvasIntro
+  - Audio
+  - Music
+  - Sound
+  - CanvasInGame
+  - Canvas
+  - GameTitle
+  - Background
+  - DeathMenu
+  - PauseMenu
   layers:
   - Default
   - TransparentFX

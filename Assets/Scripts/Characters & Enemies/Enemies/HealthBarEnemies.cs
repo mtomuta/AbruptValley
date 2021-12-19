@@ -1,0 +1,34 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+using UnityEngine.UI;
+
+public class HealthBarEnemies : MonoBehaviour
+{
+    public Image hpImage;
+    public Image hpEffectImage;
+
+    private float hp;
+    [SerializeField] private float maxHp;
+    [SerializeField] private float hurtSpeed = 0.005f;
+
+    private void Start()
+    {
+        hp = maxHp;
+    }
+
+    void Update()
+    {
+        hpImage.fillAmount = hp / maxHp;
+
+        if (hpEffectImage.fillAmount > hpImage.fillAmount)
+        {
+            hpEffectImage.fillAmount -= hurtSpeed;
+        }
+        else
+        {
+            hpEffectImage.fillAmount = hpImage.fillAmount;
+        }
+    }
+}
+

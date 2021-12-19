@@ -9,7 +9,7 @@ public class Health : MonoBehaviour
     public int baseHealth;
     public int healthModifier;
 
-    private int actualHealth;
+    public int actualHealth;
 
     public Image currentHealthBar;
     public UnityEvent onDeath;
