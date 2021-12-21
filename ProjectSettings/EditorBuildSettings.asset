@@ -17,4 +17,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Dungeon.unity
     guid: 839e4915d59ed4142b823d1952697d52
+  - enabled: 1
+    path: Assets/Scenes/EndingCredits.unity
+    guid: 08f239a59164fbf40b55032379a639d8
   m_configObjects: {}

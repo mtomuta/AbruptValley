@@ -7,7 +7,7 @@ TagManager:
   - GameMusic
   - Slider
   - OptionsMenu
-  - Timer
+  - GameTitle
   - SpawnPoint
   - HealthSprite
   - ManaSprite
@@ -116,9 +116,6 @@ TagManager:
   - name: House_bottom
     uniqueID: 1472656045
     locked: 0
-  - name: Bridge_bottom
-    uniqueID: 2932033935
-    locked: 0
   - name: Props
     uniqueID: 1756271305
     locked: 0
@@ -163,12 +160,6 @@ TagManager:
     locked: 0
   - name: Prop_specific
     uniqueID: 1755010719
-    locked: 0
-  - name: Grass_bridge
-    uniqueID: 1538746395
-    locked: 0
-  - name: Bridge_top
-    uniqueID: 140755795
     locked: 0
   - name: Symbols
     uniqueID: 1840383607

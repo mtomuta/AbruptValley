@@ -19,6 +19,7 @@ public class TeleportToLvl1 : MonoBehaviour
         {
             TeleportToLvl1.StartTeleport = 0;
             StartCoroutine(WaitAndUnfreeze());
+            SoundManager.PlaySound("teleport");
         }
     }
 
