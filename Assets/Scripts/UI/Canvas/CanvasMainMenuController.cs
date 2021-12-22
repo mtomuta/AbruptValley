@@ -10,18 +10,18 @@ public class CanvasMainMenuController : MonoBehaviour
 
     private static bool canvasExists;
 
-    void Awake()
-    {
-        if (!canvasExists)
-        {
-            canvasExists = true;
-            DontDestroyOnLoad(transform.gameObject);
-        }
-        else
-        {
-            Destroy(gameObject);
-        }
-    }
+    //void Awake()
+    //{
+    //    if (!canvasExists)
+    //    {
+    //        canvasExists = true;
+    //        DontDestroyOnLoad(transform.gameObject);
+    //    }
+    //    else
+    //    {
+    //        Destroy(gameObject);
+    //    }
+    //}
 
     void Start()
     {

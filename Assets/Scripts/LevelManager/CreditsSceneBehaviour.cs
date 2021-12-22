@@ -17,6 +17,7 @@ public class CreditsSceneBehaviour : MonoBehaviour
     public void LoadMenu()
     {
         StartCoroutine(WaitForSceneLoad());
+        PauseMenu.CanBePaused = false;
         TeleportToLvl1.StartTeleport = 0;
         TeleportToLvl2.StartTeleport = 0;
     }

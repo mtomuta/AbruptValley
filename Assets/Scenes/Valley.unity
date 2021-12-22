@@ -50451,6 +50451,10 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1502508773404158049, guid: 02be27df66cc4f446ac8eca9cb15e620, type: 3}
+      propertyPath: m_TagString
+      value: CharacterPanel
+      objectReference: {fileID: 0}
     - target: {fileID: 1694714907912925515, guid: 02be27df66cc4f446ac8eca9cb15e620, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0

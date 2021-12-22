@@ -17,23 +17,23 @@ public class CharacterPanel : MonoBehaviour
             onKeyDown?.Invoke();
             if (CharacterPanlIsUp)
             {
-                Resume();
+                ResumeGame();
             }
             else
             {
-                Pause();
+                ShowPanel();
             }
         }
     }
 
-    public void Resume()
+    public void ResumeGame()
     {
         characterPanelUI.SetActive(false);
         Time.timeScale = 1f;
         CharacterPanlIsUp = false;
     }
 
-    void Pause()
+    void ShowPanel()
     {
         characterPanelUI.SetActive(true);
         Time.timeScale = 1f;

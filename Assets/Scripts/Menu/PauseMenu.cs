@@ -13,6 +13,16 @@ public class PauseMenu : MonoBehaviour
     public GameObject optionsMenuUI;
     //public GameObject characterPanelUI;
 
+    void Awake()
+    {
+        //characterPanelUI = GameObject.FindWithTag("CharacterPanel");
+    }
+
+    void Start()
+    {
+        //characterPanelUI = GameObject.FindWithTag("CharacterPanel");
+    }
+
     void Update()
     {
         Behaviour();
@@ -60,6 +70,7 @@ public class PauseMenu : MonoBehaviour
     {
         Time.timeScale = 1f;
         SceneManager.LoadScene("Menu");
+        CanBePaused = false;
         TeleportToLvl1.StartTeleport = 0;
         TeleportToLvl2.StartTeleport = 0;
     }
