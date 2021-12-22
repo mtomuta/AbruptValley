@@ -6,14 +6,14 @@ public class PopUp : MonoBehaviour
 {
     public bool playerInRange;
     public string otherTag;
-    [SerializeField] GameObject symbol;
+    [SerializeField] GameObject popUp;
 
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.gameObject.CompareTag(otherTag) && !other.isTrigger)
         {
             playerInRange = true;
-            symbol.SetActive(true);
+            popUp.SetActive(true);
             SoundManager.PlaySound("interaction");
         }
     }
@@ -23,7 +23,8 @@ public class PopUp : MonoBehaviour
         if (other.gameObject.CompareTag(otherTag) && !other.isTrigger)
         {
             playerInRange = false;
-            symbol.SetActive(false);
+            popUp.SetActive(false);
+            
         }
     }
 }

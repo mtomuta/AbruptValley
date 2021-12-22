@@ -12,17 +12,15 @@ public enum Attribute
 [CreateAssetMenu(menuName="ScriptableObjects/Attributes")]
 public class Attributes : ScriptableObject
 {
+    [SerializeField] private int baseHealth;
     [SerializeField] private int baseAttack;
 
     private int attackModifier;
+    private int healthModifier;
 
+    public int health { get { return baseHealth + healthModifier; } }
     public int attack { get { return baseAttack + attackModifier; } }
     public float speed;
-
-    public void IncreaseBaseAttack(int amount)
-    {
-        baseAttack += amount;
-    }
 
     public void ModifyAttribute(Attribute attribute, int amount)
     {
@@ -32,14 +30,18 @@ public class Attributes : ScriptableObject
                 attackModifier += amount;
                 break;
             case Attribute.health:
-                
+                healthModifier += amount;
                 break;
         }
     }
 
-    private void ModifyHealth(Health health, int amount)
+    public void IncreaseBaseAttack(int amount)
     {
-        health.healthModifier += amount;
+        baseAttack += amount;
+    }
+
+    public void IncreaseBaseHealth(int amount)
+    {
+        baseHealth += amount;
     }
 }
-

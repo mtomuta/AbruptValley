@@ -1,13 +1,14 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
 public class LoadValleyScene : MonoBehaviour
 {
     void OnEnable()
     {
-        SceneManager.LoadScene("Valley", LoadSceneMode.Single);
         PauseMenu.CanBePaused = true;
+        SceneManager.LoadScene("Valley", LoadSceneMode.Single);
     }
 }

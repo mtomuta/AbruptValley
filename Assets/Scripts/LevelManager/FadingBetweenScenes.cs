@@ -4,24 +4,20 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
-public class SkipIntroTrigger : MonoBehaviour
+public class FadingBetweenScenes : MonoBehaviour
 {
     public Animator animator;
     public Image black;
 
-    private void Update()
+    void Start()
     {
-        if (Input.GetKeyDown(KeyCode.F))
-        {
-            PauseMenu.CanBePaused = true;
-            StartCoroutine(WaitForSceneLoad());
-        }
+        StartCoroutine(WaitForSceneLoad());
     }
 
     IEnumerator WaitForSceneLoad()
     {
         animator.SetTrigger("Fade");
         yield return new WaitUntil(() => black.color.a == 1);
-        SceneManager.LoadScene("Valley", LoadSceneMode.Single);
+        //SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
 }

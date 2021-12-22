@@ -6,7 +6,7 @@ using UnityEngine.UI;
 [RequireComponent(typeof(AudioSource))]
 public class SoundManager : MonoBehaviour
 {
-    public static AudioClip bringerDeath, closeChest, footstep, interaction, levelUp, openChest, playerDeath, playerHeal, playerSwordAttack, select, skeletonDeath, skeletonWalk, teleport, vaseBreak;
+    public static AudioClip bringerDeath, closeChest, earthquake, footstep, interaction, levelUp, openChest, playerDeath, playerHeal, playerSwordAttack, select, skeletonDeath, skeletonWalk, teleport, vaseBreak;
     public static AudioSource audio;
 
     private void Start()
@@ -15,6 +15,7 @@ public class SoundManager : MonoBehaviour
 
         bringerDeath = Resources.Load<AudioClip>("bringerDeath");
         closeChest = Resources.Load<AudioClip>("closeChest");
+        earthquake = Resources.Load<AudioClip>("earthquake");
         footstep = Resources.Load<AudioClip>("footstep");
         interaction = Resources.Load<AudioClip>("interaction");
         levelUp = Resources.Load<AudioClip>("levelUp");
@@ -39,6 +40,10 @@ public class SoundManager : MonoBehaviour
 
             case "closeChest":
                 audio.PlayOneShot(closeChest, 0.3f);
+                break;
+
+            case "earthquake":
+                audio.PlayOneShot(earthquake);
                 break;
 
             case "footstep":

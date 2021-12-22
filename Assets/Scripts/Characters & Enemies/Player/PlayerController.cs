@@ -38,7 +38,7 @@ public class PlayerController : MonoBehaviour
         attackingHashCode = Animator.StringToHash("Attacking");
         deathHashCode = Animator.StringToHash("Death");
         runningHashCode = Animator.StringToHash("Running");
-        AttributePanel.instance.UpdateAttributePoints(playerAttributes, health, lvlExperience);
+        AttributePanel.instance.UpdateAttributePoints(playerAttributes, lvlExperience);
 
         if (!playerExists)
         {

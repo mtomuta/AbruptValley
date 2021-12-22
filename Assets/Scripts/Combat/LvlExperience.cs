@@ -131,6 +131,6 @@ public class LvlExperience : MonoBehaviour
 
     private void UpdateAttributePanel()
     {
-        AttributePanel.instance.UpdateAttributePoints(player.playerAttributes, health, this);
+        AttributePanel.instance.UpdateAttributePoints(player.playerAttributes, this);
     }
 }

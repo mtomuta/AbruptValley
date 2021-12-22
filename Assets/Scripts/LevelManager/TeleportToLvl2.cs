@@ -16,7 +16,7 @@ public class TeleportToLvl2 : MonoBehaviour
         if (collision.gameObject.tag == "Player" && TeleportToLvl2.StartTeleport == 1)
         {
             TeleportToLvl2.StartTeleport = 0;
-            StartCoroutine(WaitAndUnfreeze());
+            StartCoroutine(WaitForSceneLoad());
             SoundManager.PlaySound("teleport");
         }
     }
@@ -26,23 +26,23 @@ public class TeleportToLvl2 : MonoBehaviour
         animator.SetTrigger("Fade");
         yield return new WaitUntil(() => black.color.a == 1);
         SceneManager.LoadScene("Dungeon");
-        FreezePosition();
+        //FreezePosition();
     }
 
-    IEnumerator WaitAndUnfreeze()
-    {
-        yield return WaitForSceneLoad();
-        UnfreezePosition();
-    }
+    //IEnumerator WaitAndUnfreeze()
+    //{
+    //    yield return WaitForSceneLoad();
+    //    UnfreezePosition();
+    //}
 
-    void FreezePosition()
-    {
-        GameObject.FindGameObjectWithTag("Player").GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezePosition;
-    }
+    //void FreezePosition()
+    //{
+    //    GameObject.FindGameObjectWithTag("Player").GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezePosition;
+    //}
 
-    void UnfreezePosition()
-    {
-        GameObject.FindGameObjectWithTag("Player").GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.None;
-        GameObject.FindGameObjectWithTag("Player").GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezeRotation;
-    }
+    //void UnfreezePosition()
+    //{
+    //    GameObject.FindGameObjectWithTag("Player").GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.None;
+    //    GameObject.FindGameObjectWithTag("Player").GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezeRotation;
+    //}
 }

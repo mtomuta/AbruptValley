@@ -9,6 +9,8 @@ public class TeleportActivationToLvl1 : MonoBehaviour
         if (collision.gameObject.tag == "Player")
         {
             TeleportToLvl1.StartTeleport = 1;
+            ShakingDungeon.ShakeEnabled = 1;
+            ShakingDungeon.ShakeTextEnabled = 1;
         }
     }
 }

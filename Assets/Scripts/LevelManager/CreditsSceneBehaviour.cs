@@ -4,24 +4,27 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
-public class SkipIntroTrigger : MonoBehaviour
+public class CreditsSceneBehaviour : MonoBehaviour
 {
     public Animator animator;
     public Image black;
 
-    private void Update()
+    void Start()
     {
-        if (Input.GetKeyDown(KeyCode.F))
-        {
-            PauseMenu.CanBePaused = true;
-            StartCoroutine(WaitForSceneLoad());
-        }
+        PauseMenu.CanBePaused = false;
+    }
+
+    public void LoadMenu()
+    {
+        StartCoroutine(WaitForSceneLoad());
+        TeleportToLvl1.StartTeleport = 0;
+        TeleportToLvl2.StartTeleport = 0;
     }
 
     IEnumerator WaitForSceneLoad()
     {
         animator.SetTrigger("Fade");
         yield return new WaitUntil(() => black.color.a == 1);
-        SceneManager.LoadScene("Valley", LoadSceneMode.Single);
+        SceneManager.LoadScene("Menu");
     }
 }

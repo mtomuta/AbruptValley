@@ -21,10 +21,10 @@ public class AttributePanel : MonoBehaviour
         }
     }
 
-    public void UpdateAttributePoints(Attributes attributes, Health health, LvlExperience lvlExperience)
+    public void UpdateAttributePoints(Attributes attributes, LvlExperience lvlExperience)
     {
         txtLevel.text = lvlExperience.level.ToString();
-        txtHealth.text = health.health.ToString();
+        txtHealth.text = attributes.health.ToString();
         txtAttack.text = attributes.attack.ToString();
         txtSpeed.text = attributes.speed.ToString();
         txtAttributePoints.text = lvlExperience.attributePoints.ToString();
