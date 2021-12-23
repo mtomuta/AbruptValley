@@ -9,7 +9,7 @@ public class CreditsSceneBehaviour : MonoBehaviour
     public Animator animator;
     public Image black;
 
-    void Start()
+    private void Start()
     {
         PauseMenu.CanBePaused = false;
     }

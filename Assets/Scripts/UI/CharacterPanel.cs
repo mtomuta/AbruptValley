@@ -2,41 +2,53 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.SceneManagement;
 
 public class CharacterPanel : MonoBehaviour
 {
-    public static bool CharacterPanlIsUp = false;
-
+    public static bool PanelIsDisplayed = true;
+    public static bool CanBeDisplayed = true;
+    
     public GameObject characterPanelUI;
-    public UnityEvent onKeyDown;
+    public UnityEvent onKeyDown;  
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.I))
+        if (SceneManager.GetActiveScene().name == "Valley" || SceneManager.GetActiveScene().name == "Dungeon")
         {
-            onKeyDown?.Invoke();
-            if (CharacterPanlIsUp)
+            CanBeDisplayed = true;
+        }
+        else if (SceneManager.GetActiveScene().name == "Menu" || SceneManager.GetActiveScene().name == "Intro" || SceneManager.GetActiveScene().name == "EndingCredits")
+        {
+            CanBeDisplayed = false;
+        }
+
+        if (CanBeDisplayed)
+        {
+            if (Input.GetKeyDown(KeyCode.I))
             {
-                ResumeGame();
-            }
-            else
-            {
-                ShowPanel();
+                onKeyDown?.Invoke();
+                if (PanelIsDisplayed && SceneManager.GetActiveScene().name == "Valley" || PanelIsDisplayed && SceneManager.GetActiveScene().name == "Dungeon")
+                {
+                    HidePanel();
+                }
+                else
+                {
+                    ShowPanel();
+                }
             }
         }
     }
 
-    public void ResumeGame()
+    public void HidePanel()
     {
         characterPanelUI.SetActive(false);
-        Time.timeScale = 1f;
-        CharacterPanlIsUp = false;
+        PanelIsDisplayed = false;
     }
 
-    void ShowPanel()
+    public void ShowPanel()
     {
         characterPanelUI.SetActive(true);
-        Time.timeScale = 1f;
-        CharacterPanlIsUp = true;
+        PanelIsDisplayed = true;
     }
 }

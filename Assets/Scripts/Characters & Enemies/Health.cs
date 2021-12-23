@@ -73,6 +73,7 @@ public class Health : MonoBehaviour
 
     public void RespawnBaseHealth()
     {
+        gameObject.layer = 7;
         ActualHealth = baseHealth;
         UpdateHealthBar();
     }

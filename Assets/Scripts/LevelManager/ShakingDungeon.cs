@@ -7,7 +7,6 @@ public class ShakingDungeon : MonoBehaviour
 {
     public static int ShakeEnabled = 1;
     public static int ShakeTextEnabled = 1;
-
     [SerializeField] GameObject shakePopUp;
 
     void OnTriggerEnter2D(Collider2D collision)

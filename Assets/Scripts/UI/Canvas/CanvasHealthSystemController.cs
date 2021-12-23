@@ -1,21 +1,36 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class CanvasHealthSystemController : MonoBehaviour
 {
-    private static bool canvasExists;
+    public CanvasGroup canGroup;
 
-    void Awake()
+    void Start()
     {
-        if (!canvasExists)
+        canGroup = GetComponent<CanvasGroup>();
+    }
+
+    public void Update()
+    {
+        if (SceneManager.GetActiveScene().name == "Valley" || SceneManager.GetActiveScene().name == "Dungeon")
         {
-            canvasExists = true;
-            DontDestroyOnLoad(transform.gameObject);
+            ActivateBars();
         }
-        else
+        else if (SceneManager.GetActiveScene().name == "Menu" || SceneManager.GetActiveScene().name == "Intro" || SceneManager.GetActiveScene().name == "EndingCredits")
         {
-            Destroy(gameObject);
+            HideBars();
         }
+    }
+
+    public void ActivateBars()
+    {
+        canGroup.alpha = 1;
+    }
+
+    public void HideBars()
+    {
+        canGroup.alpha = 0;
     }
 }

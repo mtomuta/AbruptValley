@@ -5,11 +5,43 @@ using UnityEngine.SceneManagement;
 
 public class DeathMenu : MonoBehaviour
 {
+    public static DeathMenu instance;
+
+    public CanvasGroup canGroup;
+    public PlayerController player;
     public GameObject deathMenuUI;
+
+    void Start()
+    {
+        canGroup = GetComponent<CanvasGroup>();
+    }
+
+    private void Update()
+    {
+        player = FindObjectOfType<PlayerController>();
+
+        if (player.dead == true)
+        {
+            ShowDeathMenu();
+        }
+    }
+
+    public void ShowDeathMenu()
+    {
+        canGroup.alpha = 1;
+        canGroup.interactable = true;
+        canGroup.blocksRaycasts = true;
+    }
+
+    public void HideDeathMenu()
+    {
+        canGroup.alpha = 0;
+        canGroup.interactable = false;
+        canGroup.blocksRaycasts = false;
+    }
 
     public void NewGame()
     {
-        deathMenuUI.SetActive(false);
         Time.timeScale = 1f;
         SceneManager.LoadScene("Valley");
         PauseMenu.CanBePaused = true;
@@ -19,7 +51,6 @@ public class DeathMenu : MonoBehaviour
 
     public void LoadMenu()
     {
-        deathMenuUI.SetActive(false);
         Time.timeScale = 1f;
         SceneManager.LoadScene("Menu");
         PauseMenu.CanBePaused = false;

@@ -29,20 +29,10 @@ public class Interactable : MonoBehaviour //IPointerDownHandler
         }
     }
 
-    //private void OnTriggerEnter2D(Collider2D collision)
-    //{
-    //    onInteraction?.Invoke();
-    //}
-
     private void OnTriggerExit2D(Collider2D collision)
     {
         onWalkAway?.Invoke();
     }
-
-    //public void OnPointerDown(PointerEventData eventData)
-    //{
-    //    Interact();
-    //}
 
     public virtual void Interact()
     {
@@ -62,9 +52,12 @@ public class Interactable : MonoBehaviour //IPointerDownHandler
 
     public virtual void InteractionHeal()
     {
-        player.GetComponent<Health>().ActualHealth = 6;
-        player.GetComponent<Health>().currentHealthBar.fillAmount = (float)player.GetComponent<Health>().ActualHealth / player.GetComponent<Health>().health;
-        SoundManager.PlaySound("playerHeal");
+        if (player.GetComponent<Health>().ActualHealth < player.GetComponent<Health>().health)
+        {
+            player.GetComponent<Health>().ActualHealth = player.GetComponent<Health>().health;
+            player.GetComponent<Health>().currentHealthBar.fillAmount = (float)player.GetComponent<Health>().ActualHealth / player.GetComponent<Health>().health;
+            SoundManager.PlaySound("playerHeal");
+        }
     }
 
     public virtual void GameCreditsScreen()

@@ -39,7 +39,7 @@ public class SoundManager : MonoBehaviour
                 break;
 
             case "closeChest":
-                audio.PlayOneShot(closeChest, 0.3f);
+                audio.PlayOneShot(closeChest, 0.15f);
                 break;
 
             case "earthquake":
@@ -59,7 +59,7 @@ public class SoundManager : MonoBehaviour
                 break;
 
             case "openChest":
-                audio.PlayOneShot(openChest, 0.3f);
+                audio.PlayOneShot(openChest, 0.15f);
                 break;
 
             case "playerDeath":
@@ -91,7 +91,7 @@ public class SoundManager : MonoBehaviour
                 break;
 
             case "vaseBreak":
-                audio.PlayOneShot(vaseBreak, 0.3f);
+                audio.PlayOneShot(vaseBreak, 0.15f);
                 break;
         }
     }

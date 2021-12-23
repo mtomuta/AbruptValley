@@ -6,30 +6,26 @@ public class DontDestroyOnLoadByTag : MonoBehaviour
 {
     private void Awake()
     {
-        GameObject[] gameMusic = GameObject.FindGameObjectsWithTag("GameMusic");
-        GameObject[] musicController = GameObject.FindGameObjectsWithTag("MusicController");
-        GameObject[] soundManager = GameObject.FindGameObjectsWithTag("SoundManager");
-        GameObject[] soundController = GameObject.FindGameObjectsWithTag("SoundController");
+        //GameObject[] gameMusic = GameObject.FindGameObjectsWithTag("GameMusic");
+        //GameObject[] musicController = GameObject.FindGameObjectsWithTag("MusicController");
+        //GameObject[] soundManager = GameObject.FindGameObjectsWithTag("SoundManager");
+        //GameObject[] soundController = GameObject.FindGameObjectsWithTag("SoundController");
+
+        GameObject[] music = GameObject.FindGameObjectsWithTag("Music");
+        GameObject[] sound = GameObject.FindGameObjectsWithTag("Sound");
 
         GameObject[] canvasMainMenu = GameObject.FindGameObjectsWithTag("CanvasMainMenu");
         GameObject[] canvasMenus = GameObject.FindGameObjectsWithTag("CanvasMenus");
 
         GameObject[] canvasCharacterPanel = GameObject.FindGameObjectsWithTag("CanvasCharacterPanel");
         GameObject[] canvasHealthSystem = GameObject.FindGameObjectsWithTag("CanvasHealthSystem");
+        GameObject[] deathMenu = GameObject.FindGameObjectsWithTag("DeathMenu");
 
-        if (gameMusic.Length > 1)
+        if (music.Length > 1)
         {
             Destroy(this.gameObject);
         }
-        else if (musicController.Length > 1)
-        {
-            Destroy(this.gameObject);
-        }
-        else if (soundManager.Length > 1)
-        {
-            Destroy(this.gameObject);
-        }
-        else if (soundController.Length > 1)
+        else if (sound.Length > 1)
         {
             Destroy(this.gameObject);
         }
@@ -46,6 +42,10 @@ public class DontDestroyOnLoadByTag : MonoBehaviour
             Destroy(this.gameObject);
         }
         else if (canvasHealthSystem.Length > 1)
+        {
+            Destroy(this.gameObject);
+        }
+        else if (deathMenu.Length > 1)
         {
             Destroy(this.gameObject);
         }

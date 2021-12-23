@@ -35,12 +35,14 @@ TagManager:
   - Music
   - Sound
   - CanvasInGame
-  - Canvas
+  - CanvasMain
   - GameTitle
   - Background
   - DeathMenu
   - PauseMenu
   - CharacterPanel
+  - CanvasEndingCredits
+  - Canvas
   layers:
   - Default
   - TransparentFX

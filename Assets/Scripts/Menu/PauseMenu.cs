@@ -11,38 +11,30 @@ public class PauseMenu : MonoBehaviour
 
     public GameObject pauseMenuUI;
     public GameObject optionsMenuUI;
-    //public GameObject characterPanelUI;
-
-    void Awake()
-    {
-        //characterPanelUI = GameObject.FindWithTag("CharacterPanel");
-    }
-
-    void Start()
-    {
-        //characterPanelUI = GameObject.FindWithTag("CharacterPanel");
-    }
 
     void Update()
     {
-        Behaviour();
-    }
-
-    public virtual void Behaviour()
-    {
-        if (Input.GetKeyDown(KeyCode.Escape))
+        if (SceneManager.GetActiveScene().name == "Valley" || SceneManager.GetActiveScene().name == "Dungeon")
         {
-            if (GameIsPaused)
+            CanBePaused = true;
+        }
+        else if (SceneManager.GetActiveScene().name == "Menu" || SceneManager.GetActiveScene().name == "Intro" || SceneManager.GetActiveScene().name == "EndingCredits")
+        {
+            CanBePaused = false;
+        }
+
+        if (CanBePaused)
+        {
+            if (Input.GetKeyDown(KeyCode.Escape))
             {
-                Resume();
-            }
-            else if (!CanBePaused)
-            {
-                Resume();
-            }
-            else
-            {
-                Pause();
+                if (GameIsPaused)
+                {
+                    Resume();
+                }
+                else
+                {
+                    Pause();
+                }
             }
         }
     }
@@ -50,19 +42,21 @@ public class PauseMenu : MonoBehaviour
     public void Resume()
     {
         GameIsPaused = false;
-
         pauseMenuUI.SetActive(false);
         optionsMenuUI.SetActive(false);
-        //characterPanelUI.SetActive(false);
+
+        CharacterPanel.CanBeDisplayed = true;     
+        
         Time.timeScale = 1f;
     }
 
     public virtual void Pause()
     {
         GameIsPaused = true;
-
-        //characterPanelUI.SetActive(false);
         pauseMenuUI.SetActive(true);
+
+        CharacterPanel.CanBeDisplayed = false;
+        
         Time.timeScale = 0f;
     }
 

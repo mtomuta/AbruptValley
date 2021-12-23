@@ -1368,7 +1368,6 @@ GameObject:
   - component: {fileID: 2602929460802577522}
   - component: {fileID: 2185549311997698729}
   - component: {fileID: 8143332509932421453}
-  - component: {fileID: 8341374249511347651}
   m_Layer: 5
   m_Name: CanvasHealthSystem
   m_TagString: CanvasHealthSystem
@@ -1457,18 +1456,6 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
---- !u!114 &8341374249511347651
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2207921399857565842}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 99f505c59dbebdb4c9d85eff86d7e59e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &2422715142006487643
 GameObject:
   m_ObjectHideFlags: 0
@@ -2033,8 +2020,8 @@ GameObject:
   - component: {fileID: 4935635804289643496}
   - component: {fileID: 7594043337996863223}
   - component: {fileID: 6327162854284295910}
+  - component: {fileID: 5856727076827917192}
   - component: {fileID: 8524919343028876834}
-  - component: {fileID: 3355394271815710649}
   m_Layer: 5
   m_Name: CanvasCharacterPanel
   m_TagString: CanvasCharacterPanel
@@ -2123,6 +2110,18 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
+--- !u!225 &5856727076827917192
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2918895997308506552}
+  m_Enabled: 1
+  m_Alpha: 0
+  m_Interactable: 0
+  m_BlocksRaycasts: 0
+  m_IgnoreParentGroups: 0
 --- !u!114 &8524919343028876834
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2175,18 +2174,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
---- !u!114 &3355394271815710649
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2918895997308506552}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 99f505c59dbebdb4c9d85eff86d7e59e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &2968529799935480491
 GameObject:
   m_ObjectHideFlags: 0
@@ -5932,7 +5919,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1911497049552783116}
-  - component: {fileID: 3700727800378254938}
   - component: {fileID: 5084087915377478}
   m_Layer: 0
   m_Name: CanvasInGame
@@ -5957,18 +5943,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &3700727800378254938
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7889846282150509167}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 99f505c59dbebdb4c9d85eff86d7e59e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &5084087915377478
 MonoBehaviour:
   m_ObjectHideFlags: 0

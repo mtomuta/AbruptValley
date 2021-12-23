@@ -1,27 +1,11 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
 public class CanvasMainMenuController : MonoBehaviour
 {
-    private CanvasGroup canGroup;
-
-    private static bool canvasExists;
-
-    //void Awake()
-    //{
-    //    if (!canvasExists)
-    //    {
-    //        canvasExists = true;
-    //        DontDestroyOnLoad(transform.gameObject);
-    //    }
-    //    else
-    //    {
-    //        Destroy(gameObject);
-    //    }
-    //}
+    public CanvasGroup canGroup;
 
     void Start()
     {

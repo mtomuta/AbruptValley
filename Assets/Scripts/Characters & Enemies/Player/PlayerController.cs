@@ -2,6 +2,8 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
+
 
 public class PlayerController : MonoBehaviour
 {
@@ -21,11 +23,11 @@ public class PlayerController : MonoBehaviour
     int deathHashCode;
     int attackingHashCode;
     int runningHashCode;
-
+    
     private float timeStepSound = 0;
-    private bool dead;
     private static bool playerExists;
-    public bool canMove = true;
+    public bool canMove;
+    public bool dead;
 
     void Start()
     {
@@ -53,24 +55,36 @@ public class PlayerController : MonoBehaviour
 
     void Update()
     {
-        horizontal = inputPlayer.horizontalAxis;
-        vertical = inputPlayer.verticalAxis;
+        if (SceneManager.GetActiveScene().name == "Valley" || SceneManager.GetActiveScene().name == "Dungeon")
+        {
+            canMove = true;
+        }
+        else if (SceneManager.GetActiveScene().name == "Menu" || SceneManager.GetActiveScene().name == "Intro" || SceneManager.GetActiveScene().name == "EndingCredits")
+        {
+            canMove = false;
+        }
 
-        if (horizontal != 0 || vertical != 0)
+        if (canMove)
         {
-            SetXYAnimator();
-            animator.SetBool(runningHashCode, true);
-            PlayFootstepSound();
-        }
-        else
-        {
-            animator.SetBool(runningHashCode, false);
-        }
-        
-        if (Input.GetButtonDown("Attack"))
-        {
-            animator.SetBool(attackingHashCode, true);
-            PlaySwordAttackSound();
+            horizontal = inputPlayer.horizontalAxis;
+            vertical = inputPlayer.verticalAxis;
+
+            if (horizontal != 0 || vertical != 0)
+            {
+                SetXYAnimator();
+                animator.SetBool(runningHashCode, true);
+                PlayFootstepSound();
+            }
+            else
+            {
+                animator.SetBool(runningHashCode, false);
+            }
+
+            if (Input.GetButtonDown("Attack"))
+            {
+                animator.SetBool(attackingHashCode, true);
+                PlaySwordAttackSound();
+            }
         }
     }
 
@@ -94,7 +108,7 @@ public class PlayerController : MonoBehaviour
         animator.SetFloat("Y", vertical);
     }
 
-    void AttackController()
+    public void AttackController()
     {
         attacker.Attack(inputPlayer.faceDirection, playerAttributes.attack);
         animator.SetBool(attackingHashCode, false);
@@ -108,12 +122,12 @@ public class PlayerController : MonoBehaviour
         //Time.timeScale = 0f;
     }
 
-    void SetDeadFalse()
+    public void SetDeadFalse()
     {
         dead = false;
+        Time.timeScale = 0f;
         animator.SetBool(deathHashCode, false);
         animator.SetBool(runningHashCode, true);
-        Time.timeScale = 0f;
     }
 
     public RaycastHit2D[] Interact()
