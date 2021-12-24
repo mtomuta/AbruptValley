@@ -279,6 +279,47 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 7253823603615932323, guid: 5410ddb06ef1105419a9f03b00e54b35, type: 3}
+      propertyPath: m_Text
+      value: '- PRODUCER -
+
+        Marius Tomuta
+
+
+        - ART -
+
+        Marius
+        Tomuta
+
+
+        - CODING & QA -
+
+        Marius Tomuta
+
+
+        - TESTERS
+        -
+
+        Marius T.
+
+        Albert C.
+
+        Ainhoa P.
+
+        Gabi
+        N.
+
+
+        Trailer and cinematics by Marius Tomuta
+
+
+        Special thanks
+        to everyone who tested the game'
+      objectReference: {fileID: 0}
+    - target: {fileID: 7253823603813095384, guid: 5410ddb06ef1105419a9f03b00e54b35, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -1150
+      objectReference: {fileID: 0}
     - target: {fileID: 7253823604698062139, guid: 5410ddb06ef1105419a9f03b00e54b35, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -366,6 +407,10 @@ PrefabInstance:
     - target: {fileID: 7253823604698062279, guid: 5410ddb06ef1105419a9f03b00e54b35, type: 3}
       propertyPath: m_Name
       value: CanvasEndingCredits
+      objectReference: {fileID: 0}
+    - target: {fileID: 7253823604818771919, guid: 5410ddb06ef1105419a9f03b00e54b35, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5410ddb06ef1105419a9f03b00e54b35, type: 3}

@@ -5,36 +5,45 @@ using UnityEngine.UI;
 
 public class SoundController : MonoBehaviour
 {
-    private float soundVolume = 1f;
-
     public AudioSource audio;
     public Slider soundSlider;
 
     private void Start()
     {
-        audio = GameObject.FindWithTag("SoundManager").GetComponent<AudioSource>();
-        soundSlider = GameObject.FindWithTag("SoundSlider").GetComponent<Slider>();
+        //audio = GameObject.FindWithTag("SoundManager").GetComponent<AudioSource>();
+        //soundSlider = GameObject.FindWithTag("SoundSlider").GetComponent<Slider>();
 
-        soundVolume = PlayerPrefs.GetFloat("sound");
-        audio.volume = soundVolume;
-        soundSlider.value = soundVolume;
+        if (!PlayerPrefs.HasKey("sound"))
+        {
+            PlayerPrefs.SetFloat("sound", 1);
+            LoadSoundValue();
+        }
+        else
+        {
+            LoadSoundValue();
+        }
     }
 
-    private void Update()
+    public void UpdateVolume()
     {
-        audio.volume = soundVolume;
-        PlayerPrefs.SetFloat("sound", soundVolume);
+        audio.volume = soundSlider.value;
+        SaveSoundValue();
     }
 
-    public void UpdateVolume(float volume)
+    public void LoadSoundValue()
     {
-        soundVolume = volume;
+        soundSlider.value = PlayerPrefs.GetFloat("sound");
     }
 
-    public void ResetMusic()
+    public void SaveSoundValue()
     {
-        PlayerPrefs.DeleteKey("sound");
-        audio.volume = 1;
-        soundSlider.value = 1;
+        PlayerPrefs.SetFloat("sound", soundSlider.value);
     }
+
+    //public void ResetMusic()
+    //{
+    //    PlayerPrefs.DeleteKey("sound");
+    //    audio.volume = 1;
+    //    soundSlider.value = 1;
+    //}
 }

@@ -5,36 +5,45 @@ using UnityEngine.UI;
 
 public class MusicController : MonoBehaviour
 {
-    private float musicVolume = 1f;
-
     public AudioSource audio;
     public Slider musicSlider;
 
-    private void Start()
+    void Start()
     {
-        audio = GameObject.FindWithTag("GameMusic").GetComponent<AudioSource>();
-        musicSlider = GameObject.FindWithTag("MusicSlider").GetComponent<Slider>();
+        //audio = GameObject.FindWithTag("GameMusic").GetComponent<AudioSource>();
+        //musicSlider = GameObject.FindWithTag("MusicSlider").GetComponent<Slider>();
 
-        musicVolume = PlayerPrefs.GetFloat("music");
-        audio.volume = musicVolume;
-        musicSlider.value = musicVolume;
+        if (!PlayerPrefs.HasKey("music"))
+        {
+            PlayerPrefs.SetFloat("music", 1);
+            LoadMusicValue();
+        }
+        else
+        {
+            LoadMusicValue();
+        }
     }
 
-    private void Update()
+    public void UpdateVolume()
     {
-        audio.volume = musicVolume;
-        PlayerPrefs.SetFloat("music", musicVolume);
+        audio.volume = musicSlider.value;
+        SaveMusicValue();
     }
 
-    public void UpdateVolume(float volume)
+    public void LoadMusicValue()
     {
-        musicVolume = volume;
+        musicSlider.value = PlayerPrefs.GetFloat("music");
     }
 
-    public void ResetMusic()
+    public void SaveMusicValue()
     {
-        PlayerPrefs.DeleteKey("music");
-        audio.volume = 1;
-        musicSlider.value = 1;
+        PlayerPrefs.SetFloat("music", musicSlider.value);
     }
+
+    //public void ResetMusic()
+    //{
+    //    PlayerPrefs.DeleteKey("music");
+    //    audio.volume = 1;
+    //    musicSlider.value = 1;
+    //}
 }

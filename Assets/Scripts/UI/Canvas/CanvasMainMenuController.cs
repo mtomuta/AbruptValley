@@ -18,7 +18,7 @@ public class CanvasMainMenuController : MonoBehaviour
         {
             ActiveMainMenuAndChests();
         }
-        else
+        else if (SceneManager.GetActiveScene().name == "Intro" || SceneManager.GetActiveScene().name == "Valley" || SceneManager.GetActiveScene().name == "Dungeon" || SceneManager.GetActiveScene().name == "EndingCredits")
         {
             HideMainMenuAndChests();
         }
