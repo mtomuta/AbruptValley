@@ -14,6 +14,14 @@ public class CreditsSceneBehaviour : MonoBehaviour
         PauseMenu.CanBePaused = false;
     }
 
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.F))
+        {
+            StartCoroutine(WaitForSceneLoad());
+        }
+    }
+
     public void LoadMenu()
     {
         StartCoroutine(WaitForSceneLoad());
