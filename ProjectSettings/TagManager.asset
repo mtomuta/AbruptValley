@@ -45,6 +45,7 @@ TagManager:
   - Canvas
   - Timer
   - Managers
+  - Spike
   layers:
   - Default
   - TransparentFX

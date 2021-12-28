@@ -15,8 +15,8 @@ GameObject:
   - component: {fileID: 106572627972331245}
   - component: {fileID: 106572627972331246}
   m_Layer: 0
-  m_Name: Spike_1
-  m_TagString: Untagged
+  m_Name: Spike
+  m_TagString: Spike
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -130,7 +130,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f48dda3861a3189478497e395bf71df3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  animator: {fileID: 106572627972331240}
   attributes: {fileID: 11400000, guid: 02f888a727bd4604c9de3f1d90047044, type: 2}
+  startWaitTime: 1
+  waitTime: 0
 --- !u!114 &106572627972331246
 MonoBehaviour:
   m_ObjectHideFlags: 0
