@@ -17,7 +17,7 @@ TagManager:
   - SoundManager
   - MusicSlider
   - SoundSlider
-  - Guardian
+  - Healer
   - CanvasMenus
   - CanvasDialogueAndFading
   - CanvasHealthAndPanel
@@ -46,6 +46,7 @@ TagManager:
   - Timer
   - Managers
   - Spike
+  - Guardian
   layers:
   - Default
   - TransparentFX

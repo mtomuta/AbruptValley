@@ -8,7 +8,7 @@
 	 <string>But the hard truth is this.</string>
 	 <string>You are the only hope we have left.</string>
 	 <string>It is dangerous to go alone, but you must trust yourself.</string>
-	 <string>I will be waiting for you. Now, you must go.</string>
+	 <string>I will be waiting for you. Now, you must take the portal in the north.</string>
    </lines>
    <id>Merchant</id>
  </Dialogue>
@@ -16,7 +16,7 @@
    <lines>
      <string>If you are injured, I will heal you.</string>
    </lines>
-   <id>Guardian</id>
+   <id>Healer</id>
  </Dialogue>
  <Dialogue>
    <lines>
