@@ -78,9 +78,9 @@ public class Health : MonoBehaviour
         UpdateHealthBar();
     }
 
-    private void DestroyGameObject()
+    public void DestroyGameObject()
     {
         Destroy(gameObject);
-        //Destroy(gameObject, 0.5f)
+        //Destroy(gameObject, 0.5f);
     }
 }

@@ -132,7 +132,7 @@ MonoBehaviour:
   attributes: {fileID: 11400000, guid: b24ee68d2f28d514aacd6c7aed7af10a, type: 2}
   xp: 5
   aggroDistance: 2
-  attackDistance: 1.25
+  attackDistance: 1.4
 --- !u!114 &4394523187634863019
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -145,7 +145,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c274cda26515fff46b7ac887138f2544, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  offSet: 1
+  offSet: 1.4
   hitBox: {x: 1, y: 1}
   attackLayer:
     serializedVersion: 2

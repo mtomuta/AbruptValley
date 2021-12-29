@@ -6,7 +6,7 @@ using UnityEngine.UI;
 [RequireComponent(typeof(AudioSource))]
 public class SoundManager : MonoBehaviour
 {
-    public static AudioClip bringerDeath, closeChest, earthquake, footstep, interaction, levelUp, openChest, playerDeath, playerHeal, playerSwordAttack, select, skeletonDeath, skeletonWalk, teleport, vaseBreak;
+    public static AudioClip bringerDeath, closeChest, devilEyeDeath, earthquake, footstep, interaction, levelUp, mushroomDeath, openChest, playerDeath, playerHeal, playerSwordAttack, select, skeletonDeath, teleport, throwProjectile, vaseBreak, wizardDeath;
     public static AudioSource audio;
 
     private void Start()
@@ -15,19 +15,22 @@ public class SoundManager : MonoBehaviour
 
         bringerDeath = Resources.Load<AudioClip>("bringerDeath");
         closeChest = Resources.Load<AudioClip>("closeChest");
+        devilEyeDeath = Resources.Load<AudioClip>("devilEyeDeath");
         earthquake = Resources.Load<AudioClip>("earthquake");
         footstep = Resources.Load<AudioClip>("footstep");
         interaction = Resources.Load<AudioClip>("interaction");
         levelUp = Resources.Load<AudioClip>("levelUp");
+        mushroomDeath = Resources.Load<AudioClip>("mushroomDeath");
         openChest = Resources.Load<AudioClip>("openChest");
         playerDeath = Resources.Load<AudioClip>("playerDeath");
         playerHeal = Resources.Load<AudioClip>("playerHeal");
         playerSwordAttack = Resources.Load<AudioClip>("playerSwordAttack");
         select = Resources.Load<AudioClip>("select");
         skeletonDeath = Resources.Load<AudioClip>("skeletonDeath");
-        skeletonWalk = Resources.Load<AudioClip>("skeletonWalk");
         teleport = Resources.Load<AudioClip>("teleport");
+        throwProjectile = Resources.Load<AudioClip>("throwProjectile");
         vaseBreak = Resources.Load<AudioClip>("vaseBreak");
+        wizardDeath = Resources.Load<AudioClip>("wizardDeath");
     }
 
     public static void PlaySound(string clip)
@@ -42,12 +45,16 @@ public class SoundManager : MonoBehaviour
                 audio.PlayOneShot(closeChest, 0.25f);
                 break;
 
+            case "devilEyeDeath":
+                audio.PlayOneShot(devilEyeDeath, 0.5f);
+                break;
+
             case "earthquake":
                 audio.PlayOneShot(earthquake);
                 break;
 
             case "footstep":
-                audio.PlayOneShot(footstep, 0.1f);
+                audio.PlayOneShot(footstep, 0.05f);
                 break;
 
             case "interaction":
@@ -55,7 +62,11 @@ public class SoundManager : MonoBehaviour
                 break;
 
             case "levelUp":
-                audio.PlayOneShot(levelUp, 0.5f);
+                audio.PlayOneShot(levelUp, 0.25f);
+                break;
+
+            case "mushroomDeath":
+                audio.PlayOneShot(mushroomDeath, 0.5f);
                 break;
 
             case "openChest":
@@ -82,16 +93,20 @@ public class SoundManager : MonoBehaviour
                 audio.PlayOneShot(skeletonDeath, 0.5f);
                 break;
 
-            case "skeletonWalk":
-                audio.PlayOneShot(skeletonWalk, 0.5f);
-                break;
-
             case "teleport":
                 audio.PlayOneShot(teleport, 0.5f);
                 break;
 
+            case "throwProjectile":
+                audio.PlayOneShot(throwProjectile, 0.5f);
+                break;
+
             case "vaseBreak":
                 audio.PlayOneShot(vaseBreak, 0.15f);
+                break;
+
+            case "wizardDeath":
+                audio.PlayOneShot(wizardDeath, 0.5f);
                 break;
         }
     }

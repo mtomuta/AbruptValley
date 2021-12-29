@@ -144,7 +144,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c274cda26515fff46b7ac887138f2544, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  offSet: 1
+  offSet: 1.5
   hitBox: {x: 1, y: 1}
   attackLayer:
     serializedVersion: 2

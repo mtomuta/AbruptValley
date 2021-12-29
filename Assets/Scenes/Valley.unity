@@ -44218,8 +44218,12 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 21300000, guid: fa1534fcea2a752429f831550d02ae49, type: 3}
     - target: {fileID: 8030494460272785232, guid: 8d6014e4856415241986e602406cd6a5, type: 3}
-      propertyPath: m_Enabled
+      propertyPath: m_Color.a
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8030494460272785232, guid: 8d6014e4856415241986e602406cd6a5, type: 3}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8037624399918508527, guid: 8d6014e4856415241986e602406cd6a5, type: 3}
       propertyPath: m_AnchorMax.y
@@ -44299,7 +44303,7 @@ PrefabInstance:
       objectReference: {fileID: 21300000, guid: ab0226cd28d392f419078c390d24f898, type: 3}
     - target: {fileID: 8286426505104826539, guid: 8d6014e4856415241986e602406cd6a5, type: 3}
       propertyPath: m_Enabled
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8603516011448226680, guid: 8d6014e4856415241986e602406cd6a5, type: 3}
       propertyPath: m_AnchorMax.y
@@ -44487,6 +44491,10 @@ PrefabInstance:
     - target: {fileID: 4177680488396900512, guid: 49aa2f1637794504b97f94c3cf991b71, type: 3}
       propertyPath: onDeath.m_PersistentCalls.m_Calls.Array.data[4].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 4177680488396900515, guid: 49aa2f1637794504b97f94c3cf991b71, type: 3}
+      propertyPath: offSet
+      value: 1.1
       objectReference: {fileID: 0}
     - target: {fileID: 4177680488396900519, guid: 49aa2f1637794504b97f94c3cf991b71, type: 3}
       propertyPath: m_RootOrder

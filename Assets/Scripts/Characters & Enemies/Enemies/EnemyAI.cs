@@ -78,13 +78,6 @@ public class EnemyAI : Enemy
         }
     }
 
-    //private void OnTriggerExit2D(Collider2D other)
-    //{
-        //SetAttackFalse();
-        //patrolling.Patrol();
-        //Debug.Log("No estoy a distancia");
-    //}
-
     private void MoveToPlayer()
     {
         animator.SetBool(walkingHashCode, true);
@@ -129,7 +122,7 @@ public class EnemyAI : Enemy
         }
     }
 
-    void SetAttackFalse()
+    public void SetAttackFalse()
     {
         attacking = false;
     }

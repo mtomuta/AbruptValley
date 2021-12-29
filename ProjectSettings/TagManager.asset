@@ -46,7 +46,9 @@ TagManager:
   - Timer
   - Managers
   - Spike
-  - Guardian
+  - Mushroom
+  - DevilEye
+  - Wizard
   layers:
   - Default
   - TransparentFX
