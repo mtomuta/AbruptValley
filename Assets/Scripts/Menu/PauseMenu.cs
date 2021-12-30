@@ -12,8 +12,14 @@ public class PauseMenu : MonoBehaviour
     public GameObject pauseMenuUI;
     public GameObject optionsMenuUI;
 
+    public PlayerController player;
+    public CharacterPanel chPanel;
+
     void Update()
     {
+        player = FindObjectOfType<PlayerController>();
+        chPanel = FindObjectOfType<CharacterPanel>();
+
         if (SceneManager.GetActiveScene().name == "Valley" || SceneManager.GetActiveScene().name == "Dungeon")
         {
             CanBePaused = true;
@@ -45,8 +51,8 @@ public class PauseMenu : MonoBehaviour
         pauseMenuUI.SetActive(false);
         optionsMenuUI.SetActive(false);
 
-        CharacterPanel.CanBeDisplayed = true;     
-        
+        chPanel.characterPanelUI.SetActive(false);
+
         Time.timeScale = 1f;
     }
 
@@ -55,15 +61,20 @@ public class PauseMenu : MonoBehaviour
         GameIsPaused = true;
         pauseMenuUI.SetActive(true);
 
-        CharacterPanel.CanBeDisplayed = false;
-        
+        chPanel.characterPanelUI.SetActive(false);
+
         Time.timeScale = 0f;
     }
 
     public void LoadMenu()
     {
+        pauseMenuUI.SetActive(false);
+        optionsMenuUI.SetActive(false);
+        chPanel.characterPanelUI.SetActive(false);
         Time.timeScale = 1f;
         SceneManager.LoadScene("Menu");
+        player.GetComponent<LvlExperience>().ResetAttributePoints();
+        player.GetComponent<LvlExperience>().ResetXpAndLevel();
         CanBePaused = false;
         TeleportToLvl1.StartTeleport = 0;
         TeleportToLvl2.StartTeleport = 0;

@@ -6,12 +6,19 @@ using UnityEngine.UI;
 public class AttributePanel : MonoBehaviour
 {
     public static AttributePanel instance;
+    public PlayerController player;
+    public Attributes playerAttributes;
 
     public Text txtLevel;
     public Text txtHealth;
     public Text txtAttack;
     public Text txtSpeed;
     public Text txtAttributePoints;
+
+    private void Start()
+    {
+        player = FindObjectOfType<PlayerController>();
+    }
 
     private void Awake()
     {

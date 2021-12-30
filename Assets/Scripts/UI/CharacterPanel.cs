@@ -6,6 +6,8 @@ using UnityEngine.SceneManagement;
 
 public class CharacterPanel : MonoBehaviour
 {
+    public static CharacterPanel instance;
+
     public static bool PanelIsDisplayed = true;
     public static bool CanBeDisplayed = true;
     

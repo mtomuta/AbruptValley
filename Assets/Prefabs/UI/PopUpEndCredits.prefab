@@ -217,7 +217,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5736239207492889959}
   - component: {fileID: 5736239207492889957}
-  - component: {fileID: 5736239207492889958}
+  - component: {fileID: 7961659975211306964}
   m_Layer: 6
   m_Name: TriggerZone_2
   m_TagString: Untagged
@@ -265,7 +265,7 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 3.1313705, y: 0.3490753}
   m_EdgeRadius: 0
---- !u!114 &5736239207492889958
+--- !u!114 &7961659975211306964
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -274,14 +274,28 @@ MonoBehaviour:
   m_GameObject: {fileID: 5736239207492889952}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a720fcbe5cc117e48a2f8f9f6e1266d8, type: 3}
+  m_Script: {fileID: 11500000, guid: 840c4d86db62f014e90d3d63c48806a2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  onInteraction:
+  chPanel: {fileID: 0}
+  interactKey: 101
+  interactAction:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 5736239207492889958}
-        m_TargetAssemblyTypeName: Interactable, Assembly-CSharp
+      - m_Target: {fileID: 7961659975211306964}
+        m_TargetAssemblyTypeName: CloseCharacterPanel, Assembly-CSharp
+        m_MethodName: CloseChPanel
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 7961659975211306964}
+        m_TargetAssemblyTypeName: CloseCharacterPanel, Assembly-CSharp
         m_MethodName: GameCreditsScreen
         m_Mode: 1
         m_Arguments:
@@ -292,10 +306,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  onWalkAway:
-    m_PersistentCalls:
-      m_Calls: []
-  dialogueId: 
 --- !u!1 &5736239207757033656
 GameObject:
   m_ObjectHideFlags: 0

@@ -44,4 +44,10 @@ public class Attributes : ScriptableObject
     {
         baseHealth += amount;
     }
+
+    public void ResetAttributes()
+    {
+        baseAttack = 1;
+        baseHealth = 6;
+    }
 }

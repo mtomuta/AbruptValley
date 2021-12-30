@@ -216,6 +216,7 @@ GameObject:
   - component: {fileID: 4177680488396900515}
   - component: {fileID: 4177680488396900512}
   - component: {fileID: 4177680488396900505}
+  - component: {fileID: 4873442563909333281}
   - component: {fileID: 4177680488396900518}
   - component: {fileID: 4177680488396900513}
   - component: {fileID: 4177680488396900526}
@@ -325,6 +326,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 64
   canMove: 1
+  dead: 0
 --- !u!114 &4177680488396900515
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -354,7 +356,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2b71980f4ebadae4ebb1fae1d70604bf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  baseHealth: 10
+  baseHealth: 6
   healthModifier: 0
   actualHealth: 0
   currentHealthBar: {fileID: 0}
@@ -373,10 +375,58 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
+      - m_Target: {fileID: 4873442563909333281}
+        m_TargetAssemblyTypeName: RespawnFullHealth, Assembly-CSharp
+        m_MethodName: RespawnWithFullHealth
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
+      - m_Target: {fileID: 4177680488396900512}
+        m_TargetAssemblyTypeName: Health, Assembly-CSharp
+        m_MethodName: ChangeLayer
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
+      - m_Target: {fileID: 11400000, guid: f7ad96d9000d3aa4aaea60bc717b5442, type: 2}
+        m_TargetAssemblyTypeName: Attributes, Assembly-CSharp
+        m_MethodName: ResetAttributes
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
+      - m_Target: {fileID: 4177680488396900505}
+        m_TargetAssemblyTypeName: LvlExperience, Assembly-CSharp
+        m_MethodName: ResetAttributePoints
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
+      - m_Target: {fileID: 4177680488396900505}
+        m_TargetAssemblyTypeName: LvlExperience, Assembly-CSharp
+        m_MethodName: ResetXpAndLevel
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -402,6 +452,19 @@ MonoBehaviour:
   - {fileID: 0}
   currentXpBar: {fileID: 0}
   attributePoints: 0
+--- !u!114 &4873442563909333281
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4177680488396900522}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ebf9191f6b058504aa168edf65c82011, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 4177680488396900514}
 --- !u!114 &4177680488396900518
 MonoBehaviour:
   m_ObjectHideFlags: 0

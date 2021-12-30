@@ -78,6 +78,11 @@ public class Health : MonoBehaviour
         UpdateHealthBar();
     }
 
+    public void ChangeLayer()
+    {
+        gameObject.layer = 7;
+    }
+
     public void DestroyGameObject()
     {
         Destroy(gameObject);

@@ -59,9 +59,4 @@ public class Interactable : MonoBehaviour //IPointerDownHandler
             SoundManager.PlaySound("playerHeal");
         }
     }
-
-    public virtual void GameCreditsScreen()
-    {
-        SceneManager.LoadScene("EndingCredits");
-    }
 }

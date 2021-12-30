@@ -6,6 +6,8 @@ using UnityEngine.UI;
 [RequireComponent(typeof(TextHitGenerator))]
 public class LvlExperience : MonoBehaviour
 {
+    public static LvlExperience instance;
+
     private Health health;
     private PlayerController player;
     private TextHitGenerator textHitGenerator;
@@ -129,8 +131,25 @@ public class LvlExperience : MonoBehaviour
         //}
     }
 
-    private void UpdateAttributePanel()
+    public void UpdateAttributePanel()
     {
         AttributePanel.instance.UpdateAttributePoints(player.playerAttributes, this);
+    }
+
+    public void ResetAttributePoints()
+    {
+        attributePoints = 0;
+        GetAttributeButton();
+        UpdateAttributePanel();
+    }
+
+    public void ResetXpAndLevel()
+    {
+        xp = 0;
+        level = 1;
+        xpActual = 0;
+        xpNextLevel = 10;
+        percentXpActualLevel = 0;
+        UpdateXpBar();
     }
 }

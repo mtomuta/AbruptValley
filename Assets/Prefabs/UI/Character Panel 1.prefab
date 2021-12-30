@@ -609,6 +609,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f6e50bfa9432cb44fb904d20347d61a7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  player: {fileID: 0}
+  playerAttributes: {fileID: 0}
   txtLevel: {fileID: 7943133550401969761}
   txtHealth: {fileID: 890075876545809858}
   txtAttack: {fileID: 8375768645010598674}

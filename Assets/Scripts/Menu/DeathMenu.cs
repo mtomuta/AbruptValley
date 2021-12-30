@@ -44,6 +44,8 @@ public class DeathMenu : MonoBehaviour
     {
         Time.timeScale = 1f;
         SceneManager.LoadScene("Valley");
+        player.GetComponent<LvlExperience>().ResetAttributePoints();
+        player.GetComponent<LvlExperience>().ResetXpAndLevel();
         PauseMenu.CanBePaused = true;
         TeleportToLvl1.StartTeleport = 0;
         TeleportToLvl2.StartTeleport = 0;
@@ -53,6 +55,8 @@ public class DeathMenu : MonoBehaviour
     {
         Time.timeScale = 1f;
         SceneManager.LoadScene("Menu");
+        player.GetComponent<LvlExperience>().ResetAttributePoints();
+        player.GetComponent<LvlExperience>().ResetXpAndLevel();
         PauseMenu.CanBePaused = false;
         TeleportToLvl1.StartTeleport = 0;
         TeleportToLvl2.StartTeleport = 0;
